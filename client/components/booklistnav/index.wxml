@@ -1,0 +1,4 @@
+<!--components/booklistnav/index.wxml-->
+<view class="ftd-booklistnav" wx:for="{{booklist}}">
+  {{item.text}}
+</view>

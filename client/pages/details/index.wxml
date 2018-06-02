@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <ftdNav></ftdNav>
+  <view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo__avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="userinfo__all">
+      <view class="userinfo__nickname">{{userInfo.nickName}}</view>
+      <view class="userinfo__des">我来自浙江大学</view>
+    </view>
+  </view>
+  <view class="booklist">
+    <ftdBLN
+      booklist="{{booklist}}"
+    ></ftdBLN>
+  </view>
+</view>

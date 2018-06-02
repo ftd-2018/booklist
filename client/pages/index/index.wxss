@@ -1,21 +1,19 @@
 /**index.wxss**/
-.userinfo {
+.serach{
+  width: 650rpx;
+  height: 92rpx;
+  margin: 0 auto;
+  background: #F5F5F5;
+  border-radius: 16rpx;
+  font-size: 34rpx;
+  color: #24253D;
+  line-height: 92rpx;
+  padding-left: 20rpx;
+  margin-bottom: 36rpx;
+}
+.booklist{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+  justify-content: space-between; 
+  width: 670rpx;
+  flex-wrap: wrap;
 }

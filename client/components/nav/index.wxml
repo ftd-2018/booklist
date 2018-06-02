@@ -1,5 +1,15 @@
 <!--components/nav/index.wxml-->
 <view class="ftd-nav">
-  <view class="ftd-nav__write"></view>
-  <image class="ftd-nav__icon"></image>
+  <view class="ftd-nav__write">
+    {{title}}
+    <image src="{{penimg}}"></image>
+  </view>
+  <image class="ftd-nav__icon" src="{{src}}" bindtap="showNav"></image>
+  <view wx:if="{{isShowNav}}" class="ftd-nav__panel">
+    <view 
+      wx:for="{{navItems}}"
+    >
+      <navigator  class="ftd-nav__navigator" url="{{item.url}}">{{item.text}}</navigator>
+    </view>
+  </view>
 </view>

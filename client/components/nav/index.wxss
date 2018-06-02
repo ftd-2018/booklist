@@ -10,16 +10,45 @@
 }
 .ftd-nav__write{
   position: absolute;
-  background: #D73316;
-  width: 111rpx;
+  width: 105rpx;
   height: 40rpx;
   top: 24rpx;
   right: 110rpx;
+  font-size: 10px;
+  text-align: right;
+  color:#FFFFFF;
+  line-height: 40rpx;
+  padding-right: 6rpx;
+  background: #D73316;
+  background-size: 23rpx 22rpx;
+}
+.ftd-nav__write image{
+  position: absolute;
+  left: 6rpx;
+  top: 10rpx;
+  width: 22rpx;
+  height: 23rpx;
 }
 .ftd-nav__icon{
   position: absolute;
-  top: 28rpx;
+  top: 18rpx;
   right: 38rpx;
-  width: 33rpx;
+  width: 50rpx;
+  height: 50rpx;
   float: right;
+}
+.ftd-nav__panel{
+  position: absolute;
+  top: 72rpx;
+  right: 13rpx;
+  width: 179rpx;
+  background: #FFFFFF;
+  border: 1px solid #F0F0F0;
+  box-shadow: 0 4px 8px 0 rgba(221,221,221,0.50);
+}
+.ftd-nav__navigator{
+  font-size: 24rpx;
+  color: #24253D;
+  text-align: center;
+  padding: 10rpx 0;
 }

@@ -1,0 +1,20 @@
+/* components/booklist/index.wxss */
+.ftd-booklist{
+  position: relative;
+  background: #F5F5F5;
+  border-radius: 16rpx;
+  width: 284rpx;
+  height: 74rpx;
+  font-size: 28rpx;
+  color: #24253D;
+  line-height: 74rpx;
+  padding-left: 30rpx;
+  margin-bottom: 20rpx;
+}
+.ftd-booklist image{
+  position: absolute;
+  width: 37rpx;
+  height: 34rpx;
+  top: 20rpx;
+  right: 20rpx;
+}

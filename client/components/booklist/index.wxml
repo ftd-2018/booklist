@@ -1,0 +1,7 @@
+<!--components/booklist/index.wxml-->
+<view class="ftd-booklist">
+  <view>
+    {{text}}
+  </view>
+  <image src="{{imgUrl}}"></image>
+</view>

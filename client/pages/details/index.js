@@ -7,7 +7,12 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    booklist:[{
+      text: "计算机图形"
+    },{
+      text: "数学"
+    }]
   },
   //事件处理函数
   bindViewTap: function() {
