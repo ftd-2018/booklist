@@ -1,0 +1,25 @@
+/* components/nav/index.wxss */
+.ftd-nav{
+  width: 750rpx;
+  height: 88rpx;
+  background: #FFFFFF;
+  box-shadow: 0 4px 4px 0 rgba(227,227,227,0.50);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ftd-nav__write{
+  position: absolute;
+  background: #D73316;
+  width: 111rpx;
+  height: 40rpx;
+  top: 24rpx;
+  right: 110rpx;
+}
+.ftd-nav__icon{
+  position: absolute;
+  top: 28rpx;
+  right: 38rpx;
+  width: 33rpx;
+  float: right;
+}
