@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="course">
+  <view class="course-blank" wx:if="{{!courseFlag}}">
+    <image src="../images/blank-page.png" class="blank-img"></image>
+    <text class="blank-text">还没有添加课程哦，现在去<text class="write-course">写课程</text></text>
+  </view>
+  <view class="course-data" wx:if="{{courseFlag}}">
+    <text class="course-list" wx:for="{{courseData}}">{{item.name}}</text>
+  </view>
+</view>

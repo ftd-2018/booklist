@@ -1,0 +1,35 @@
+<view class="my-setting">
+  <view class="setting-inp">
+    <text class="label">用户名</text>
+    <view class="inp-text"><input name="title" placeholder="请输入用户名" 
+    bindinput="userInp"/></view>
+  </view>
+  <view class="setting-inp">
+    <text class="label">我的图像</text>
+    <view class="inp-text"><input name="title" placeholder="请上传图像" 
+    bindinput="myAvatar"/></view>
+  </view>
+  <view class="setting-inp">
+    <text class="label">本科院校</text>
+    <view class="inp-text"><input name="title" placeholder="请输入本科院校" 
+    bindinput="collegesInp"/></view>
+  </view>
+  <view class="setting-inp">
+    <text class="label">研究生院校</text>
+    <view class="inp-text"><input name="title" placeholder="请输入研究生院校" 
+    bindinput="graduateInp"/></view>
+  </view>
+  <view class="setting-inp">
+    <text class="label">微信号</text>
+    <view class="inp-text"><input name="title" placeholder="请输入微信号" 
+    bindinput="weiChatInp"/></view>
+  </view>
+  <view class="setting-inp">
+    <text class="label">手机号</text>
+    <view class="inp-text"><input name="title" placeholder="请输入手机号" 
+    bindinput="mobileInp"/></view>
+  </view>
+  <view class="setting-login">
+    <button class="login-btn" bindtap="loginBtnClick">添加</button>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+.my-setting{
+  display: flex;
+  flex-direction: column;
+}
+.my-setting .setting-inp{
+  width:750rpx;
+  height: 100rpx;
+  padding:0 32rpx;
+  font-size:28rpx;
+  line-height: 100rpx;
+  color:#333333;
+  background-color:#FFFFFF;
+}
+.setting-inp .label{
+  float:left;
+  /* width:490rpx; */
+}
+.setting-inp .inp-text{
+  float:right;
+  /* width:190rpx; */
+  height: 100rpx;
+}
+.inp-text input{
+  height: 100rpx;  
+}
+
+.setting-login .login-btn{
+  width:686rpx;
+  height:93rpx;
+  margin:80rpx auto 0;
+  font-size:28rpx;
+  line-height:93rpx;
+  color:#FFFFFF;
+  background-color:#D73316;
+  border-radius: 8rpx;
+}

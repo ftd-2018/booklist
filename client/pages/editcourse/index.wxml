@@ -1,0 +1,26 @@
+<view class="edit-course">
+  <view class="course-inp">
+    <text class="label">标题</text>
+    <view class="inp-text"><input name="title" placeholder="请输入标题" 
+    bindinput="titleInp"/></view>
+  </view>
+  <view class="course-inp-two"></view>
+  <view class="course-add" wx:if="{{courseList.length}}">
+  <view class="add-text" wx:for="{{courseList}}">
+    <text>{{item.name}}</text>
+  </view>
+  </view>
+  <view class="course-inp">
+    <text class="label">书名</text>
+    <view class="inp-text"><input name="title" placeholder="请输入书名" 
+    bindinput="nameInp"/></view>
+  </view>
+  <view class="course-inp">
+    <text class="label">作者</text>
+    <view class="inp-text"><input name="title" placeholder="请输入作者" 
+    bindinput="authorInp"/></view>
+  </view>
+  <view class="course-login">
+    <button class="login-btn" bindtap="addBtnClick">添加</button>
+  </view>
+</view>

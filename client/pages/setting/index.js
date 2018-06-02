@@ -1,0 +1,45 @@
+const app=getApp()
+
+Page({
+    data:{
+      userInp:'',
+      myAvatar:'',
+      collegesInp:'',
+      graduateInp:'',
+      weiChatInp:'',
+      mobileInp:''
+    },
+    userInp(e){
+      this.setData({
+        userInp:e.detail.value
+      })
+    },
+    myAvatar(e){
+      this.setData({
+        myAvatar:e.detail.value
+      })
+    },
+    collegesInp(e){
+      this.setData({
+        collegesInp:e.detail.value
+      })
+    },
+    graduateInp(e){
+      this.setData({
+        graduateInp:e.detail.value
+      })
+    },
+    weiChatInp(e){
+      this.setData({
+        weiChatInp:e.detail.value
+      })
+    },
+    mobileInp(e){
+      this.setData({
+        mobileInp:e.detail.value
+      })
+    },
+    loginBtnClick(){
+
+    },
+})

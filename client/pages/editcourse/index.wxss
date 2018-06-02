@@ -1,0 +1,53 @@
+.edit-course{
+  display: flex;
+  flex-direction: column;
+}
+.edit-course .course-inp{
+  width:750rpx;
+  height: 100rpx;
+  padding:0 32rpx;
+  font-size:28rpx;
+  line-height: 100rpx;
+  color:#333333;
+  background-color:#FFFFFF;
+}
+.course-inp .label{
+  float:left;
+  width:490rpx;
+}
+.course-inp .inp-text{
+  float:left;
+  width:190rpx;
+  height: 100rpx;
+}
+.inp-text input{
+  height: 100rpx;  
+}
+
+.course-inp-two{
+  width:750rpx;
+  height: 20rpx;
+  background-color:#F5F5F5;
+}
+.course-add{
+  flex-direction: column;
+}
+.add-text{
+  width:670rpx;
+  height: 82rpx;
+  font-size:34rpx;
+  line-height:82rpx;
+  background-color:#F5F5F5;
+  margin:30rpx auto  0;
+}
+
+.course-login .login-btn{
+  width:686rpx;
+  height:93rpx;
+  margin:80rpx auto 0;
+  font-size:28rpx;
+  line-height:93rpx;
+  color:#FFFFFF;
+  background-color:#D73316;
+  border-radius: 8rpx;
+}
