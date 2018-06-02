@@ -1,6 +1,11 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/details/details",
+    "pages/myblist/myblist",
+    "pages/collection/collection",
+    "pages/setting/setting",
+    "pages/editcourse/editcourse",
     "pages/logs/logs"
   ],
   "window":{
