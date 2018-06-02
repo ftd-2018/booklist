@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
+    <ftdNav></ftdNav>
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>

@@ -1,0 +1,5 @@
+<!--components/nav/index.wxml-->
+<view class="ftd-nav">
+  <view class="ftd-nav__write"></view>
+  <image class="ftd-nav__icon"></image>
+</view>
