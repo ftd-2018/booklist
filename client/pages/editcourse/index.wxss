@@ -29,6 +29,17 @@
   height: 20rpx;
   background-color:#F5F5F5;
 }
+.course-add{
+  flex-direction: column;
+}
+.add-text{
+  width:670rpx;
+  height: 82rpx;
+  font-size:34rpx;
+  line-height:82rpx;
+  background-color:#F5F5F5;
+  margin:30rpx auto  0;
+}
 
 .course-login .login-btn{
   width:686rpx;

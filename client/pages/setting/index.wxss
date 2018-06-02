@@ -13,11 +13,11 @@
 }
 .setting-inp .label{
   float:left;
-  width:490rpx;
+  /* width:490rpx; */
 }
 .setting-inp .inp-text{
-  float:left;
-  width:190rpx;
+  float:right;
+  /* width:190rpx; */
   height: 100rpx;
 }
 .inp-text input{

@@ -4,7 +4,8 @@ Page({
     data:{
       titleInp:'',
       nameInp:'',
-      authorInp:''
+      authorInp:'',
+      courseList:[],
     },
     titleInp(e){
       this.setData({
@@ -21,7 +22,14 @@ Page({
         authorInp:e.detail.value
       })
     },
-    loginBtnClick(){
-
+    addBtnClick(){
+      var list=this.data.courseList;
+      list.push({name:this.data.nameInp+' '+this.data.authorInp})
+      this.setData({
+        courseList:list,
+        titleInp:'',
+        nameInp:'',
+        authorInp:''
+      })
     },
 })
