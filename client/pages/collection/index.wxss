@@ -1,0 +1,29 @@
+/**index.wxss**/
+.course-blank,.course-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-blank .blank-img{
+  width:290rpx;
+  height:240rpx;
+  margin:240rpx auto 0;
+}
+
+.course-blank .blank-text{
+  font-size:28rpx;
+  line-height: 40rpx;
+  margin-top:20rpx;
+}
+
+.blank-text .write-course{
+  color:orange;
+}
+
+.course-data .course-list{
+  width:670rpx;
+  height: 82rpx;
+  background-color:#F5F5F5;
+  margin:30rpx auto  0;
+}
