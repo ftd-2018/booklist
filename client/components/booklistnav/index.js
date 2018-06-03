@@ -4,8 +4,12 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    booklist:{
-      type: Array,
+    text:{
+      type: String,
+      value: ""
+    },
+    bookid:{
+      type: String,
       value: ""
     }
   },

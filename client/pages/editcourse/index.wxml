@@ -1,4 +1,7 @@
 <view class="edit-course">
+  <ftdNav
+    type="0"
+  ></ftdNav>
   <view class="course-inp">
     <text class="label">标题</text>
     <view class="inp-text"><input name="title" placeholder="请输入标题" 

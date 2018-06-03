@@ -20,7 +20,8 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    console.log(1111,options.bookid);
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

@@ -1,15 +1,18 @@
 <!--components/nav/index.wxml-->
 <view class="ftd-nav">
-  <view class="ftd-nav__write">
-    {{title}}
+  <view class="ftd-nav__write" wx:if="{{type == 1}}">
+    <navigator url="/pages/editcourse/index">{{title}}</navigator>
     <image src="{{penimg}}"></image>
+  </view>
+  <view class="ftd-nav__sub" wx:else bindtap="submit">
+    提交
   </view>
   <image class="ftd-nav__icon" src="{{src}}" bindtap="showNav"></image>
   <view wx:if="{{isShowNav}}" class="ftd-nav__panel">
     <view 
       wx:for="{{navItems}}"
     >
-      <navigator  class="ftd-nav__navigator" url="{{item.url}}">{{item.text}}</navigator>
+      <navigator class="ftd-nav__navigator" url="{{item.url}}">{{item.text}}</navigator>
     </view>
   </view>
 </view>

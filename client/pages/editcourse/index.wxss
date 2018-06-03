@@ -1,6 +1,7 @@
 .edit-course{
   display: flex;
   flex-direction: column;
+  padding: 118rpx 0 0 0;
 }
 .edit-course .course-inp{
   width:750rpx;
@@ -33,12 +34,15 @@
   flex-direction: column;
 }
 .add-text{
-  width:670rpx;
+  width:634rpx;
   height: 82rpx;
   font-size:34rpx;
   line-height:82rpx;
   background-color:#F5F5F5;
   margin:30rpx auto  0;
+  padding-left: 36rpx;
+  border-radius: 16rpx;
+  color: #24253D;
 }
 
 .course-login .login-btn{

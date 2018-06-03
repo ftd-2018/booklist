@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "我的课程"
+  "usingComponents": {
+    "ftdBLN": "/components/booklistnav/index",
+    "ftdNav": "/components/nav/index"
+  },
+  "navigationBarTitleText": "我的书单"
 }

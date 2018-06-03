@@ -4,7 +4,12 @@
   flex-direction: column;
   align-items: center;
 }
-
+.course__title{
+  font-size: 36rpx;
+  color: #24253D;
+  margin-bottom: 30rpx;
+  width: 670rpx;
+}
 .course-blank .blank-img{
   width:290rpx;
   height:240rpx;
@@ -22,8 +27,13 @@
 }
 
 .course-data .course-list{
-  width:670rpx;
+  width:652rpx;
   height: 82rpx;
+  line-height: 82rpx;
+  font-size: 34rpx;
   background-color:#F5F5F5;
   margin:30rpx auto  0;
+  padding-left: 18rpx;
+  border-radius: 16rpx;
+  color: #24253D;
 }

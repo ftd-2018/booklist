@@ -6,10 +6,12 @@ Page({
   data: {
     booklist:[{
       text: "计算机1",
-      imgUrl: ""
+      isCollect: "1",
+      bookid: '123'
     },{
       text: "计算机",
-      imgUrl: ""
+      isCollect: "0",
+      bookid: '456'
     }]
   },
   //事件处理函数

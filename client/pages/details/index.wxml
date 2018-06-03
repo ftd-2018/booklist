@@ -8,9 +8,7 @@
       <view class="userinfo__des">我来自浙江大学</view>
     </view>
   </view>
-  <view class="booklist">
-    <ftdBLN
-      booklist="{{booklist}}"
-    ></ftdBLN>
+  <view class="booklist" wx:for="{{booklist}}">
+    {{item.text}}
   </view>
 </view>

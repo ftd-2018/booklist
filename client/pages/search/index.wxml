@@ -1,0 +1,15 @@
+<!--pages/search/index.wxml-->
+<view class="container">
+  <ftdNav></ftdNav>
+  <view class="search">
+    <input class="search__input" bindinput="bindKeyInput"></input>
+    <view class="search__btn" bindtap="search">搜索</view>
+  </view>
+  <view class="booklist" wx:if="{{booklist.length > 0}}">
+    <ftdBL
+      wx:for="{{booklist}}"
+      text="{{item.text}}"
+      isCollect="{{item.isCollect}}"
+    ></ftdBL>
+  </view>
+</view>

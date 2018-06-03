@@ -26,3 +26,13 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.booklist{
+  width: 630rpx;
+  padding: 17rpx 22rpx 17rpx 18rpx;
+  font-size: 34rpx;
+  color: #24253D;
+  background: #F5F5F5;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+}

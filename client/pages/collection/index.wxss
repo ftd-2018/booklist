@@ -11,6 +11,13 @@
   margin:240rpx auto 0;
 }
 
+.course__title{
+  font-size: 36rpx;
+  color: #24253D;
+  margin-bottom: 30rpx;
+  width: 670rpx;
+}
+
 .course-blank .blank-text{
   font-size:28rpx;
   line-height: 40rpx;
@@ -21,9 +28,3 @@
   color:orange;
 }
 
-.course-data .course-list{
-  width:670rpx;
-  height: 82rpx;
-  background-color:#F5F5F5;
-  margin:30rpx auto  0;
-}

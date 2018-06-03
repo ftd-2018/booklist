@@ -1,0 +1,30 @@
+/* pages/search/index.wxss */
+.search{
+  display: flex;
+  align-items: center;
+  margin-bottom: 36rpx;
+}
+.search__input{
+  height: 92rpx;
+  width: 500rpx;
+  background: #F5F5F5;
+  border-radius: 16rpx;
+  padding:0 20rpx;
+  margin-right: 30rpx;
+}
+.search__btn{
+  width: 100rpx;
+  height: 72rpx;
+  background: #D73316;
+  color: #fff;
+  font-size: 12px;
+  line-height: 72rpx;
+  text-align: center;
+  border-radius: 16rpx;
+}
+.booklist{
+  display: flex;
+  justify-content: space-between; 
+  width: 670rpx;
+  flex-wrap: wrap;
+}

@@ -1,10 +1,18 @@
 <!--index.wxml-->
-<view class="course">
-  <view class="course-blank" wx:if="{{!courseFlag}}">
-    <image src="../../images/blank-page.png" class="blank-img"></image>
-    <text class="blank-text" bindtap="goToWrite">还没有添加课程哦，现在去<text class="write-course">写课程</text></text>
-  </view>
-  <view class="course-data" wx:if="{{courseFlag}}">
-    <text class="course-list" wx:for="{{courseData}}">{{item.name}}</text>
+<view class="container">
+  <ftdNav></ftdNav>
+  <view class="course">
+    <view class="course__title">我的课程</view>
+    <view class="course-blank" wx:if="{{booklist.length <= 0}}">
+      <image src="../../images/blank-page.png" class="blank-img"></image>
+      <text class="blank-text" bindtap="goToWrite">还没有添加课程哦，现在去<text class="write-course">写课程</text></text>
+    </view>
+    <view class="course-data" wx:else>
+      <ftdBLN 
+        wx:for="{{booklist}}"
+        text="{{item.text}}"
+        bookid="{{item.bookid}}"
+        ></ftdBLN>
+    </view>
   </view>
 </view>

@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    type:{
+      type:String,
+      value: "1"
+    }
   },
 
   /**
@@ -12,14 +15,17 @@ Component({
    */
   data: {
     title: "写书单",
-    src : "../../images/head.png",
-    penimg: "../../images/pen.png",
+    src : "/images/head.png",
+    penimg: "/images/pen.png",
     navItems:[{
-      url: "",
+      url: "/pages/collection/index",
       text: "我的收藏"
     },{
-      url: "",
+      url: "/pages/myblist/index",
       text: "我的书单"
+    },{
+      url: "/pages/setting/index",
+      text: "我的设置"
     }],
     isShowNav: false
   },
@@ -27,7 +33,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    showNav() {
+    showNav:function(){
       if(this.data.isShowNav){
         this.setData({
           isShowNav: false
@@ -37,7 +43,9 @@ Component({
           isShowNav: true
         })
       }
-      
+    },
+    submit:function(){
+      console.log(111111)
     }
   }
 })

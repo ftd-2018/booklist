@@ -6,6 +6,7 @@ Page({
       nameInp:'',
       authorInp:'',
       courseList:[],
+      author:''
     },
     titleInp(e){
       this.setData({
@@ -26,10 +27,7 @@ Page({
       var list=this.data.courseList;
       list.push({name:this.data.nameInp+' '+this.data.authorInp})
       this.setData({
-        courseList:list,
-        titleInp:'',
-        nameInp:'',
-        authorInp:''
+        courseList:list
       })
     },
 })

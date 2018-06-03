@@ -1,17 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/details/index",
     "pages/myblist/index",
     "pages/collection/index",
     "pages/setting/index",
     "pages/editcourse/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/search/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }
