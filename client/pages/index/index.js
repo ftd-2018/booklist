@@ -21,7 +21,15 @@ Page({
     })
   },
   onLoad: function () {
-
+    wx.request({
+      url: 'http://localhost:7001/', //仅为示例，并非真实的接口地址
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)
+      }
+    })
   },
   getUserInfo: function(e) {
     console.log(e)
