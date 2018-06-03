@@ -22,7 +22,7 @@ Page({
   },
   onLoad: function () {
     wx.request({
-      url: 'http://localhost:7001/', //仅为示例，并非真实的接口地址
+      url: 'http://118.24.100.207:7001/', //仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/json' // 默认值
       },
