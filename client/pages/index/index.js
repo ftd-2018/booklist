@@ -4,14 +4,14 @@ const app = getApp()
 
 Page({
   data: {
-    booklist:[{
-      text: "计算机1",
+    majorList:[{
+      name: "计算机1",
       isCollect: "1",
-      bookid: '123'
+      majorID: '123'
     },{
-      text: "计算机",
+      name: "计算机",
       isCollect: "0",
-      bookid: '456'
+      majorID: '456'
     }]
   },
   //事件处理函数

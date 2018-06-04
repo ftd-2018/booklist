@@ -4,7 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    text: {
+    name: {
       type: String,
       value: '计算机',
     },
@@ -12,7 +12,7 @@ Component({
       type: String,
       value: '0'
     },
-    bookid:{
+    majorID:{
       type: String,
       value: ''
     }

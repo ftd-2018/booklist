@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.9",
-	"appid": "wxab531518eb635e4b",
-	"projectname": "book",
+	"appid": "wx538b02d5b8c48759",
+	"projectname": "booklist",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

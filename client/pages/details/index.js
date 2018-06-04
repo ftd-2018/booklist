@@ -16,12 +16,11 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   onLoad: function (options) {
-    console.log(1111,options.bookid);
+    wx.setNavigationBarTitle({
+        title: options.name,
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
