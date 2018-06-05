@@ -1,3 +1,4 @@
+var api = require('../../service/api.js');
 //index.js
 //获取应用实例
 const app = getApp()
@@ -18,6 +19,16 @@ Page({
   bindViewTap: function() {
   },
   onLoad: function (options) {
+    wx.request({
+      url: api.baseURL + 'auth/loginByWeixinAction', //仅为示例，并非真实的接口地址
+      data:{code:123, userInfo:222},
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success: function (res) {
+        
+      }
+    })
     wx.setNavigationBarTitle({
         title: options.name,
     })
