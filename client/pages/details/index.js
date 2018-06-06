@@ -19,11 +19,14 @@ Page({
   bindViewTap: function() {
   },
   onLoad: function (options) {
+    var csrftoken = wx.getStorageSync('csrfToken');
+    console.log(11111, csrftoken);
     wx.request({
       url: api.baseURL + 'auth/loginByWeixinAction', //仅为示例，并非真实的接口地址
-      data:{code:123, userInfo:222},
+      method:"POST",
       header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
+        'Content-Type': 'application/json', // 默认值     
+        'x-csrf-token': csrftoken
       },
       success: function (res) {
         
