@@ -19,19 +19,15 @@ Page({
   bindViewTap: function() {
   },
   onLoad: function (options) {
-    var csrftoken = wx.getStorageSync('csrfToken');
-    console.log(11111, csrftoken);
-    wx.request({
-      url: api.baseURL + 'auth/loginByWeixinAction', //仅为示例，并非真实的接口地址
-      method:"POST",
-      header: {
-        'Content-Type': 'application/json', // 默认值     
-        'x-csrf-token': csrftoken
-      },
-      success: function (res) {
-        
-      }
-    })
+    // wx.request({
+    //   url: api.baseURL + 'auth/loginByWeixinAction', //仅为示例，并非真实的接口地址
+    //   method:"POST",
+    //   data:{
+    //     code: 
+    //   },
+    //   success: function (res) {
+    //   }
+    // })
     wx.setNavigationBarTitle({
         title: options.name,
     })
