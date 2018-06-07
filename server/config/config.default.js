@@ -20,7 +20,27 @@ module.exports = appInfo => {
     secret: '4f421381c90f78c9337aff9b37800868',
     appid: 'wx538b02d5b8c48759'
   }
+  
+  config.mysql = {
+    client: {
+      host: 'cd-cdb-3c9c8yyp.sql.tencentcdb.com',
+      // 端口号
+      port: '63885',
+      // 用户名
+      user: 'root',
+      // 密码
+      password: 'booklist123456',
+      // 数据库名
+      database: 'test',
+    },
+    // 所有数据库配置的默认值
+    default:{},
 
-
+    // 是否加载到 app 上，默认开启
+    app: true,
+    // 是否加载到 agent 上，默认关闭
+    agent: false
+  }
+  
   return config;
 };
