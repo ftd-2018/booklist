@@ -7,7 +7,7 @@ class Token {
 	}
 
 	async parse() {
-	  if (think.token) {
+	  if (app.token) {
 	    try {
 	      return jwt.verify(think.token, secret);
 	    } catch (err) {
