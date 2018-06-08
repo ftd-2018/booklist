@@ -65,6 +65,11 @@ class AuthController extends Controller {
 		if(resultUpdata.affectedRows === 1){
 			console.log("更新成功");
 		}
+
+		// 生成 Token 返回 客户端
+		const sessionKey = await ctx.helper.token.create(sessionData);
+		console.log(sessionKey);
+
 		return this.success({ userInfo: newUserInfo });
 		
 	}
