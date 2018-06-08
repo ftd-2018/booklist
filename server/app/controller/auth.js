@@ -54,7 +54,14 @@ class AuthController extends Controller {
 		
 		// sessionData.data.user_id = userMsg.id;
 		// 查询用户信息
-		const newUserInfo = await ctx.service.user.find({id: userMsg.id});
+		const resultNewUser = await ctx.service.user.find({
+			id: userMsg.id
+		});
+
+		const newUserInfo = {
+			avatar: resultNewUser.avatar,
+			username: resultNewUser.username
+		}
 		
 		// 更新登录信息
 		const resultUpdata = await ctx.service.user.update({
@@ -68,9 +75,8 @@ class AuthController extends Controller {
 
 		// 生成 Token 返回 客户端
 		const sessionKey = await ctx.helper.token.create(sessionData);
-		console.log(sessionKey);
 
-		return this.success({ userInfo: newUserInfo });
+		return this.success({ token:sessionKey, userInfo: newUserInfo });
 		
 	}
 }

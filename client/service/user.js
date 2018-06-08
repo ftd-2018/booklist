@@ -11,13 +11,12 @@ const loginByWeixin = ()=> {
 	    code = res.code;
 	    return util.getUserInfo();
 	  }).then((userInfo) => {
-	  	console.log(123123123);
 	    //登录远程服务器
-	    util.request(api.baseURL+"auth/loginByWeixinAction", { code: code, userInfo: userInfo }, 'POST').then(res => {
-	      if (res.errno === 0) {
+      util.request(api.baseURL + "auth/loginByWeixinAction", { code: code, userInfo: userInfo }, 'POST').then(res => {
+        if (res.status === 0) {
 	        //存储用户信息
-	        wx.setStorageSync('userInfo', res.data.userInfo);
-	        wx.setStorageSync('token', res.data.token);
+	        wx.setStorageSync('userInfo', res.result.userInfo);
+          wx.setStorageSync('token', res.result.token);
 	        resolve(res);
 	      } else {
 	        reject(res);
@@ -38,7 +37,6 @@ const loginByWeixin = ()=> {
 const checkLogin = ()=> {
   return new Promise(function (resolve, reject) {
     if (wx.getStorageSync('userInfo') && wx.getStorageSync('token')) {
-
       util.checkSession().then(() => {
         resolve(true);
       }).catch(() => {

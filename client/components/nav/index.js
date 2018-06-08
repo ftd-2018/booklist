@@ -1,3 +1,4 @@
+var appInstance = getApp();
 // components/nav/index.js
 Component({
   /**
@@ -28,6 +29,23 @@ Component({
       text: "我的设置"
     }],
     isShowNav: false
+  },
+  ready:function(){
+    let userInfo = wx.getStorageSync('userInfo');
+    let token = wx.getStorageSync('token');
+
+    // 页面显示
+    if (userInfo && token) {
+      appInstance.globalData.userInfo = userInfo;
+      appInstance.globalData.token = token;
+    }
+
+    this.setData({
+      src: appInstance.globalData.userInfo.avatar,
+    });
+    // this.setData({
+    //   src: appInstance.globalData.userInfo.avatar
+    // })
   },
   /**
    * 组件的方法列表

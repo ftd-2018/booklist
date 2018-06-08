@@ -14,5 +14,10 @@ class UserService extends Service {
   	const result = await this.app.mysql.update('users', data);
   	return result;
   }
+
+  async select(data){
+    const result = await this.app.mysql.select('users', data);
+    return result;
+  }
 }
 module.exports = UserService;
