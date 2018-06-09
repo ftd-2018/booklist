@@ -1,3 +1,4 @@
+const util = require("../../utils/util.js");
 const app=getApp()
 
 Page({
@@ -6,7 +7,8 @@ Page({
       nameInp:'',
       authorInp:'',
       courseList:[],
-      author:''
+      author:'',
+      allCourse: ''
     },
     titleInp(e){
       this.setData({
@@ -25,9 +27,16 @@ Page({
     },
     addBtnClick(){
       var list=this.data.courseList;
-      list.push({name:this.data.nameInp+' '+this.data.authorInp})
+      list.push({name:this.data.nameInp+' '+this.data.authorInp});
       this.setData({
         courseList:list
+      })
+      var concatStr = '';
+      for(var i = 0; i < list.length; i++){
+        concatStr += list[i].name + ',';
+      }
+      this.setData({
+        allCourse: util.leaveLastStr(concatStr)
       })
     },
 })

@@ -1,6 +1,8 @@
 <view class="edit-course">
   <ftdNav
     type="0"
+    title="{{titleInp}}"
+    myCourse="{{allCourse}}"
   ></ftdNav>
   <view class="course-inp">
     <text class="label">标题</text>

@@ -3,12 +3,12 @@ const secret = 'FTD#@HBJRR@@gf';
 
 
 exports.token = {
-	create: function(userInfo){
+	async create(userInfo){
 		const token = jwt.sign(userInfo, secret);
 		return token;
 	},
 
-	parse : function() {
+	async parse() {
 	  if (this.app.token) {
 	    try {
 	      return jwt.verify(this.app.token, secret);
@@ -17,5 +17,19 @@ exports.token = {
 	    }
 	  }
 	  return null;
+	},
+
+	async getUserId(){
+	  const token = this.app.token;
+	  if (!token) {
+	    return 0;
+	  }
+
+	  const result = await this.parse();
+	  if (think.isEmpty(result) || result.user_id <= 0) {
+	    return 0;
+	  }
+
+	  return result.user_id;
 	}
 }

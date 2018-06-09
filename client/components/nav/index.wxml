@@ -1,7 +1,7 @@
 <!--components/nav/index.wxml-->
 <view class="ftd-nav">
   <view class="ftd-nav__write" wx:if="{{type == 1}}">
-    <navigator url="/pages/editcourse/index">{{title}}</navigator>
+    <navigator url="/pages/editcourse/index">写课程</navigator>
     <image src="{{penimg}}"></image>
   </view>
   <view class="ftd-nav__sub" wx:else bindtap="submit">

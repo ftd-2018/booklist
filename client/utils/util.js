@@ -127,9 +127,14 @@ const request = (url, data = {}, method = "GET")=> {
   });
 }
 
+const leaveLastStr = (str) => {
+  return str.slice(0, str.length - 1);
+}
+
 module.exports = {
   login,
   getUserInfo,
   checkSession,
-  request
+  request,
+  leaveLastStr
 }

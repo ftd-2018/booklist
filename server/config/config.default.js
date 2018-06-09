@@ -7,7 +7,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1528019285960_9766';
 
   // add your config here
-  config.middleware = [];
+  config.middleware = ['interceptor'];
 
   // 小程序只能存storage，关闭csrf
   config.security = {
@@ -31,7 +31,7 @@ module.exports = appInfo => {
       // 密码
       password: 'booklist123456',
       // 数据库名
-      database: 'test',
+      database: 'booklist',
     },
     // 所有数据库配置的默认值
     default:{},

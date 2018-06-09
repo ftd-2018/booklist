@@ -1,8 +1,8 @@
-const Controller = require('./base');
+const Base = require('./base');
 const Util = require('../../utils/util');
 const util = new Util();
 
-class AuthController extends Controller {
+class AuthController extends Base {
 	async loginByWeixinAction() {
 		const ctx = this.ctx;
 		const code = ctx.request.body.code;
@@ -80,5 +80,8 @@ class AuthController extends Controller {
 		
 	}
 }
+
+module.exports = AuthController;
+
 
 module.exports = AuthController;

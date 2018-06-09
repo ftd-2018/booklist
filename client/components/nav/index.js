@@ -1,4 +1,6 @@
 var appInstance = getApp();
+var util = require("../../utils/util.js");
+var api = require("../../service/api.js");
 // components/nav/index.js
 Component({
   /**
@@ -8,6 +10,14 @@ Component({
     type:{
       type:String,
       value: "1"
+    },
+    title:{
+      type:String,
+      value: ""
+    },
+    myCourse:{
+      type: String,
+      value: ""
     }
   },
 
@@ -63,7 +73,19 @@ Component({
       }
     },
     submit:function(){
-      console.log(111111)
+      util.request(api.baseURL + "course/addCourse", 
+      { 
+        title: this.properties.title,
+        myCourse: this.properties.myCourse
+      }, 'POST').then(function(res){
+        if(res.status === 0){
+          wx.showToast({
+            title: '添加成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      });
     }
   }
 })
