@@ -6,3 +6,5 @@ class CourseService extends Service {
     	return result;
 	}
 }
+
+module.exports = CourseService;

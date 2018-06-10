@@ -3,7 +3,12 @@ const Util = require('../../utils/util');
 const util = new Util();
 
 class AuthController extends Base {
+	constructor(props) {
+		super(props);
+		this.token =new this.ctx.helper.Token(this.ctx);
+	}
 	async loginByWeixinAction() {
+		let token = new this.ctx.helper.Token(this.ctx);
 		const ctx = this.ctx;
 		const code = ctx.request.body.code;
 		const fullUserInfo = ctx.request.body.userInfo;
@@ -52,7 +57,7 @@ class AuthController extends Base {
 			userMsg.id = result.insertId;
 		}
 		
-		// sessionData.data.user_id = userMsg.id;
+		sessionData.data.user_id = userMsg.id;
 		// 查询用户信息
 		const resultNewUser = await ctx.service.user.find({
 			id: userMsg.id
@@ -74,7 +79,7 @@ class AuthController extends Base {
 		}
 
 		// 生成 Token 返回 客户端
-		const sessionKey = await ctx.helper.token.create(sessionData);
+		const sessionKey = await this.token.create(sessionData);
 
 		return this.success({ token:sessionKey, userInfo: newUserInfo });
 		

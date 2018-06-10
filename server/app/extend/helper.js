@@ -2,34 +2,78 @@ const jwt = require('jsonwebtoken');
 const secret = 'FTD#@HBJRR@@gf';
 
 
-exports.token = {
+// exports.token = {
+// 	async create(userInfo){
+// 		const token = jwt.sign(userInfo, secret);
+// 		return token;
+// 	},
+
+// 	async parse(ctx) {
+// 	  if (ctx.app.token) {
+// 	    try {
+// 	      return jwt.verify(ctx.app.token, secret);
+// 	    } catch (err) {
+// 	      return null;
+// 	    }
+// 	  }
+// 	  return null;
+// 	},
+
+// 	async getUserId(ctx){
+// 	  const token = ctx.app.token;
+// 	  console.log(123123, app);
+// 	  if (!token) {
+// 	    return 0;
+// 	  }
+
+// 	  // const result = await this.parse(ctx);
+// 	  // console.log('result', result);
+// 	  // if (isEmpty(result) || result.user_id <= 0) {
+// 	  //   return 0;
+// 	  // }
+
+// 	  // return result.user_id;
+// 	}
+// }
+
+const isEmpty = function(obj){
+	if(obj) return false;
+	return true;
+}
+
+exports.isEmpty = isEmpty;
+
+class Token{
+	constructor(ctx){
+		this.ctx = ctx;
+	}
 	async create(userInfo){
 		const token = jwt.sign(userInfo, secret);
 		return token;
-	},
+	}
 
 	async parse() {
-	  if (this.app.token) {
+	  if (this.ctx.app.token) {
 	    try {
-	      return jwt.verify(this.app.token, secret);
+	      return jwt.verify(this.ctx.app.token, secret);
 	    } catch (err) {
 	      return null;
 	    }
 	  }
 	  return null;
-	},
+	}
 
 	async getUserId(){
-	  const token = this.app.token;
+	  const token = this.ctx.app.token;
 	  if (!token) {
 	    return 0;
 	  }
-
 	  const result = await this.parse();
-	  if (think.isEmpty(result) || result.user_id <= 0) {
+	  if (isEmpty(result) || result.data.user_id <= 0) {
 	    return 0;
 	  }
-
-	  return result.user_id;
+	  return result.data.user_id;
 	}
 }
+
+exports.Token = Token;
