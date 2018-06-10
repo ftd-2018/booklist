@@ -71,7 +71,7 @@ const checkSession = ()=> {
 /**
  * 封封微信的的request
  */
-const request = (url, data = {}, method = "GET")=> {
+const request = (url, data = {}, method = "POST")=> {
   return new Promise(function (resolve, reject) {
     wx.request({
       url: url,
@@ -131,10 +131,15 @@ const leaveLastStr = (str) => {
   return str.slice(0, str.length - 1);
 }
 
+const splitStr = (str) =>{
+  return str.split(",");
+}
+
 module.exports = {
   login,
   getUserInfo,
   checkSession,
   request,
-  leaveLastStr
+  leaveLastStr,
+  splitStr
 }

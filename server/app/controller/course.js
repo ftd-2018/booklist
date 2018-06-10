@@ -12,8 +12,23 @@ class CourseController extends Base {
 		});
 
 		if(addResult.affectedRows === 1){
-			console.log("插入成功");
+			return this.success("插入成功");
+		}else{
+			return this.fail("插入失败");
 		}
+	}
+
+	async listMyCourse(){
+		const ctx = this.ctx;
+		let result = await ctx.service.course.selectByUID();
+		return this.success(result);
+	}
+
+	async listCourseDetail(){
+		const ctx = this.ctx;
+		const id = ctx.request.body.id;
+		let result = await ctx.service.course.getByID(id);
+		return this.success(result);
 	}
 }
 

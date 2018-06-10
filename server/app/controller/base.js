@@ -6,8 +6,8 @@ class BaseController extends Controller{
 	}
 	success(data, status) {
 		let result = {
-			error: "操作失败",
-			msg: "操作失败",
+			error: "操作成功",
+			msg: "操作成功",
 			status: status || 0,
 			result: data
 		};
@@ -15,8 +15,8 @@ class BaseController extends Controller{
 	}
 	fail(data, status) {
 		let result = {
-			error: "操作成功",
-			msg: "操作成功",
+			error: "操作失败",
+			msg: "操作失败",
 			status: status || -1,
 			result: data
 		};

@@ -10,8 +10,8 @@
     <view class="course-data" wx:else>
       <ftdBLN 
         wx:for="{{booklist}}"
-        text="{{item.text}}"
-        bookid="{{item.bookid}}"
+        title="{{item.title}}"
+        courseID="{{item.id}}"
         ></ftdBLN>
     </view>
   </view>

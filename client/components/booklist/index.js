@@ -4,15 +4,15 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    name: {
+    title: {
       type: String,
-      value: '计算机',
+      value: '',
     },
     isCollect: {
       type: String,
       value: '0'
     },
-    majorID:{
+    courseID:{
       type: String,
       value: ''
     }

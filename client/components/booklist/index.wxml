@@ -1,7 +1,7 @@
 <!--components/booklist/index.wxml-->
 <view class="ftd-booklist">
   <view>
-    <navigator url="/pages/details/index?majorID={{majorID}}&name={{name}}">{{name}}</navigator>
+    <navigator url="/pages/details/index?courseID={{courseID}}&title={{title}}">{{title}}</navigator>
   </view>
   <image src="{{collectBackImage}}" bindtap="collectBookList"></image>
 </view>

@@ -1,4 +1,4 @@
 <!--components/booklistnav/index.wxml-->
 <view class="ftd-booklistnav">
-  <navigator url="/pages/details/index?bookid={{bookid}}">{{text}}</navigator>
+  <navigator url="/pages/details/index?courseID={{courseID}}&title={{title}}">{{title}}</navigator>
 </view>
