@@ -1,5 +1,6 @@
 <!--components/nav/index.wxml-->
 <view class="ftd-nav">
+  <navigator url='/pages/index/index'><image class="ftd-nav__logo" src="{{logo}}"></image></navigator>
   <view class="ftd-nav__write" wx:if="{{type == 1}}">
     <navigator url="/pages/editcourse/index">写课程</navigator>
     <image src="{{penimg}}"></image>

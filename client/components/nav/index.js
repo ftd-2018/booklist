@@ -28,6 +28,7 @@ Component({
     title: "写书单",
     src : "/images/head.png",
     penimg: "/images/pen.png",
+    logo: "/images/logo.png",
     navItems:[{
       url: "/pages/collection/index",
       text: "我的收藏"

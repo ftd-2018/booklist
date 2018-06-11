@@ -8,6 +8,13 @@
   top: 0;
   left: 0;
 }
+.ftd-nav__logo{
+  position: absolute;
+  top: 10rpx;
+  left: 45rpx;
+  width: 45rpx;
+  height: 67rpx;
+}
 .ftd-nav__write{
   position: absolute;
   width: 105rpx;
