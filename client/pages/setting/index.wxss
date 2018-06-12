@@ -1,8 +1,9 @@
 .my-setting{
   display: flex;
   flex-direction: column;
+  padding: 118rpx 0 0 0;
 }
-.my-setting .setting-inp{
+.setting-inp{
   width:750rpx;
   height: 100rpx;
   padding:0 32rpx;

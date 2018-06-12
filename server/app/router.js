@@ -13,4 +13,5 @@ module.exports = app => {
   router.post('/collect/addOrDeleteCollect', controller.collect.addOrDeleteCollect);
   router.post('/collect/listMyCollect', controller.collect.listMyCollect);
   router.post('/course/listSearchCourse', controller.course.listSearchCourse);
+  router.post('/user/setInfo', controller.user.setInfo);
 };

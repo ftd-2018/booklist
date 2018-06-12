@@ -29,7 +29,11 @@ App({
   globalData: {
     userInfo: {
       username: '',
-      avatar: ''
+      avatar: '',
+      undergraduate: '',
+      master_school: '',
+      wechat_id: '',
+      tel_id:''
     },
     token: '',
   }

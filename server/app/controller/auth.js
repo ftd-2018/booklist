@@ -11,6 +11,7 @@ class AuthController extends Base {
 		let token = new this.ctx.helper.Token(this.ctx);
 		const ctx = this.ctx;
 		const code = ctx.request.body.code;
+		console.log(12312, ctx.request.body);
 		const fullUserInfo = ctx.request.body.userInfo;
 		const userInfo = fullUserInfo.userInfo;
 
@@ -65,7 +66,11 @@ class AuthController extends Base {
 		
 		const newUserInfo = {
 			avatar: resultNewUser.avatar,
-			username: resultNewUser.username
+			username: resultNewUser.username,
+			undergraduate: resultNewUser.undergraduate,
+			master_school: resultNewUser.master_school,
+			wechat_id: resultNewUser.wechat_id,
+			tel_id: resultNewUser.tel_id
 		}
 		
 		// 更新登录信息
@@ -85,8 +90,5 @@ class AuthController extends Base {
 		
 	}
 }
-
-module.exports = AuthController;
-
 
 module.exports = AuthController;
