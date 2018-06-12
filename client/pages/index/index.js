@@ -1,18 +1,10 @@
-//index.js
+const util = require('../../utils/util.js');
 //获取应用实例
 const app = getApp()
 
 Page({
   data: {
-    majorList:[{
-      name: "计算机1",
-      isCollect: "1",
-      majorID: '123'
-    },{
-      name: "计算机",
-      isCollect: "0",
-      majorID: '456'
-    }]
+    courseList:[]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -21,7 +13,15 @@ Page({
     })
   },
   onLoad: function () {
-    
+      const that = this;
+      util.request( 'course/listAllCourse').then(res => {
+            if (res.status === 0) {
+                that.setData({
+                   courseList: res.result
+                });
+                console.log(123, that.data.courseList);
+            }
+      });
   },
   getUserInfo: function(e) {
     console.log(e)

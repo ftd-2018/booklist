@@ -20,7 +20,7 @@ Page({
     wx.setNavigationBarTitle({
         title: options.title,
     })
-    util.request(api.baseURL + 'course/listCourseDetail', {id: options.courseID}).then(res => {
+    util.request('course/listCourseDetail', {id: options.courseID}).then(res => {
       if (res.status === 0) {
         let arr = [];
         let result = res.result;

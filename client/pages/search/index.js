@@ -1,3 +1,4 @@
+const util = require('../../utils/util.js');
 // pages/search/index.js
 Page({
 
@@ -6,7 +7,7 @@ Page({
    */
   data: {
     inputValue: '',
-    booklist: []
+    courseList: []
   },
 
   /**
@@ -70,14 +71,12 @@ Page({
     });
   },
   search: function(){
-    this.setData({
-      "booklist": [{
-        text: "计算机1",
-        isCollect: "1"
-      }, {
-        text: "计算机",
-        isCollect: "0"
-      }]
-    })
+      util.request("course/listSearchCourse", { title: this.data.inputValue }).then(res => {
+        if (res.status === 0) {
+            this.setData({
+              "courseList": res.result
+            })
+        }
+    });
   }
 })

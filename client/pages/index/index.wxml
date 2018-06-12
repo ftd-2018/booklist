@@ -6,10 +6,10 @@
   </view>
   <view class="booklist">
     <ftdBL
-      wx:for="{{majorList}}"
-      name="{{item.name}}"
+      wx:for="{{courseList}}"
+      title="{{item.title}}"
       isCollect="{{item.isCollect}}"
-      majorID="{{item.majorID}}"
+      courseID="{{item.id}}"
     ></ftdBL>
   </view>
 </view>

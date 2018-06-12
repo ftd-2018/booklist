@@ -5,11 +5,12 @@
     <input class="search__input" bindinput="bindKeyInput"></input>
     <view class="search__btn" bindtap="search">搜索</view>
   </view>
-  <view class="booklist" wx:if="{{booklist.length > 0}}">
+  <view class="booklist" wx:if="{{courseList.length > 0}}">
     <ftdBL
-      wx:for="{{booklist}}"
-      text="{{item.text}}"
+      wx:for="{{courseList}}"
+      title="{{item.title}}"
       isCollect="{{item.isCollect}}"
+      courseID="{{item.id}}"
     ></ftdBL>
   </view>
 </view>

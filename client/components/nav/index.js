@@ -74,7 +74,7 @@ Component({
       }
     },
     submit:function(){
-      util.request(api.baseURL + "course/addCourse", 
+      util.request("course/addCourse", 
       { 
         title: this.properties.title,
         myCourse: this.properties.myCourse

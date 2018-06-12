@@ -23,8 +23,9 @@ class CourseService extends Service {
 	}
 
 	async selectCourseWithCollect(){
-		const collect = await this.app.mysql.query('select * from course left join collect on course.id=collect.course_id where collect.user_id='+this.app.userId+';');
-		let allCourse = await this.app.mysql.select('course');
+		const {ctx, app} = this;
+		const collect = await ctx.service.collect.listMyCollect();
+		let allCourse = await app.mysql.select('course');
 		for(let i = 0; i < allCourse.length; i++){
 			allCourse[i].isCollect = 0;   // 未收藏
 			for(let j = 0; j < collect.length; j++){
@@ -33,7 +34,21 @@ class CourseService extends Service {
 				}
 			}
 		}
+		return allCourse;
+	}
 
+	async selectCourseWithTitle(title){
+		const {ctx, app} = this;
+		const collect = await ctx.service.collect.listMyCollect();
+		let allCourse = await app.mysql.query('select * from course where title like "%'+title+'%"');
+		for(let i = 0; i < allCourse.length; i++){
+			allCourse[i].isCollect = 0;   // 未收藏
+			for(let j = 0; j < collect.length; j++){
+				if(collect[j].course_id == allCourse[i].id){
+					allCourse[i].isCollect = 1;  // 已收藏
+				}
+			}
+		}
 		return allCourse;
 	}
 }

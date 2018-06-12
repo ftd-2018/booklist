@@ -5,15 +5,15 @@
     <view class="course__title">我的收藏</view>
     <view class="course-blank" wx:if="{{myCollection.length <= 0}}">
       <image src="/images/blank-page.png" class="blank-img"></image>
-      <text class="blank-text"  bindtap="goToWrite">
-        还没有添加课程哦，现在去<text class="write-course">写课程</text>
+      <text class="blank-text">
+        还没有收藏课程哦~
       </text>
     </view>
     <view class="course-data" wx:else>
       <ftdBLN 
         wx:for="{{myCollection}}"
-        text="{{item.text}}"
-        bookid="{{item.bookid}}"
+        title="{{item.title}}"
+        courseID="{{item.course_id}}"
         ></ftdBLN>
     </view>
   </view>

@@ -1,3 +1,4 @@
+const util = require('../../utils/util.js');
 // components/booklist/index.js
 Component({
   /**
@@ -44,17 +45,21 @@ Component({
    */
   methods: {
     collectBookList(){
-      if (this.data.userHasCollect == 1) {
-        this.setData({
-          'collectBackImage': this.data.hasCollectImage,
-          'userHasCollect': 0
-        });
-      } else {
-        this.setData({
-          'collectBackImage': this.data.noCollectImage,
-          'userHasCollect': 1
-        });
-      }
+        util.request('collect/addOrDeleteCollect', { courseID: this.properties.courseID }).then(res => {
+            if (res.status === 0) {
+               if(res.result == 0){
+                    // 取消
+                   this.setData({
+                       'collectBackImage': this.data.noCollectImage
+                   });
+               }else{
+                    // 收藏
+                   this.setData({
+                       'collectBackImage': this.data.hasCollectImage
+                   });
+               }
+            }
+        });  
     }
   }
 })

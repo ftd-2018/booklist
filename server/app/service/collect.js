@@ -4,7 +4,7 @@ class CollectService extends Service{
 	async getByUID(courseID){
 		const {app} = this;
 		const result = await app.mysql.get('collect', {user_id: app.userId, course_id: courseID})
-		result result;
+		return result;
 	}
 
 	async selectByUID(){
@@ -20,9 +20,15 @@ class CollectService extends Service{
 	}
 
 	async delete(id){
-		const result = await this.app.mysql.delete('posts', {
+		const result = await this.app.mysql.delete('collect', {
 		  	id: id,
 		}); 
+		return result;
+	}
+
+	async listMyCollect(){
+		const {app} = this;
+		const result = await app.mysql.query('select * from course left join collect on course.id=collect.course_id where collect.user_id='+app.userId+';');
 		return result;
 	}
 }

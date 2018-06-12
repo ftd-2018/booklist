@@ -62,7 +62,7 @@ class AuthController extends Base {
 		const resultNewUser = await ctx.service.user.find({
 			id: userMsg.id
 		});
-
+		
 		const newUserInfo = {
 			avatar: resultNewUser.avatar,
 			username: resultNewUser.username
@@ -80,7 +80,7 @@ class AuthController extends Base {
 
 		// 生成 Token 返回 客户端
 		const sessionKey = await this.token.create(sessionData);
-
+		
 		return this.success({ token:sessionKey, userInfo: newUserInfo });
 		
 	}

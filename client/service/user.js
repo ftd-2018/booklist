@@ -12,7 +12,7 @@ const loginByWeixin = ()=> {
 	    return util.getUserInfo();
 	  }).then((userInfo) => {
 	    //登录远程服务器
-      util.request(api.baseURL + "auth/loginByWeixinAction", { code: code, userInfo: userInfo }, 'POST').then(res => {
+      util.request("auth/loginByWeixinAction", { code: code, userInfo: userInfo }, 'POST').then(res => {
         if (res.status === 0) {
 	        //存储用户信息
 	        wx.setStorageSync('userInfo', res.result.userInfo);

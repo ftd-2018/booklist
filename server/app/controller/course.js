@@ -36,6 +36,13 @@ class CourseController extends Base {
 		const getCollectCourse = await ctx.service.course.selectCourseWithCollect();
 		return this.success(getCollectCourse);
 	}
+
+	async listSearchCourse(){
+		const {ctx} = this;
+		const title = ctx.request.body.title;
+		const getSearchCourse = await ctx.service.course.selectCourseWithTitle(title);
+		return this.success(getSearchCourse);
+	}
 }
 
 module.exports = CourseController;

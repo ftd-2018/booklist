@@ -1,3 +1,5 @@
+var api = require('../service/api.js');
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -74,7 +76,7 @@ const checkSession = ()=> {
 const request = (url, data = {}, method = "POST")=> {
   return new Promise(function (resolve, reject) {
     wx.request({
-      url: url,
+      url: api.baseURL+url,
       data: data,
       method: method,
       header: {
