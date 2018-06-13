@@ -24,20 +24,24 @@ Page({
       if (res.status === 0) {
         let arr = [];
         let result = res.result;
-        result = util.splitStr(result.my_course);
-        for (let index in result) {
+        let resultList = util.splitStr(result.my_course);
+        for (let index in resultList) {
           arr.push({
-            text: result[index]
+            text: resultList[index]
           })
         }
         that.setData({
-          booklist: arr
+          booklist: arr,
+          userInfo: {
+            username: result.username,
+            undergraduate: result.undergraduate,
+            avatar: result.avatar
+          }
         });
       }
     });
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

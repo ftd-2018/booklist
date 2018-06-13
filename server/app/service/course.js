@@ -15,11 +15,13 @@ class CourseService extends Service {
 	}
 
 	async getByID(id){
-		const result = await this.app.mysql.get('course', {id: id});
-		return {
-			title: result.title,
-			my_course: result.my_course
-		};
+		// const result = await this.app.mysql.get('course', {id: id});
+		const result = await this.app.mysql.query('select c.title,c.my_course,u.username,u.avatar,u.undergraduate,u.master_school from course c left join user u on c.user_id=u.id where c.id='+ id);
+		let tmp = {};
+		if(result.length >= 1){
+			tmp = result[0];
+		}
+		return tmp;
 	}
 
 	async selectCourseWithCollect(){
