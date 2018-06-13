@@ -6,7 +6,7 @@
   background: #F5F5F5;
   border-radius: 16rpx;
   font-size: 34rpx;
-  color: #24253D;
+  color: rgba(36, 37, 61, .5);
   line-height: 92rpx;
   padding-left: 20rpx;
   margin-bottom: 36rpx;

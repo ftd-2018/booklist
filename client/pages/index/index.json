@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "分享书单",  
   "usingComponents": {
     "ftdNav": "/components/nav/index",
     "ftdBL": "/components/booklist/index"

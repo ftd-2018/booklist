@@ -7,7 +7,8 @@ Page({
    */
   data: {
     inputValue: '',
-    courseList: []
+    courseList: [],
+    showTip: false
   },
 
   /**
@@ -71,11 +72,24 @@ Page({
     });
   },
   search: function(){
-      util.request("course/listSearchCourse", { title: this.data.inputValue }).then(res => {
+      const that = this;
+      wx.showLoading({
+          title: '加载中',
+      });
+      util.request("course/listSearchCourse", { title: that.data.inputValue }).then(res => {
         if (res.status === 0) {
-            this.setData({
-              "courseList": res.result
-            })
+            wx.hideLoading();
+            if(res.result.length == 0){
+                that.setData({
+                    "showTip": true,
+                    "courseList": []
+                });
+            }else{
+                that.setData({
+                    "courseList": res.result,
+                    "showTip": false
+                });
+            }
         }
     });
   }

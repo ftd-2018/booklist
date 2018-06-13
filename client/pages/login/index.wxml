@@ -1,0 +1,12 @@
+<!--pages/login/index.wxml-->
+<view class="container">
+    <view class="logo">
+        <image src="../../images/logo.png"></image>
+    </view>
+    <view class="title">分享书单</view>
+    <view class="intr">大学专业课书单是一个专门提供各个大学学生的专业课书单的社区，在这里，您可以看到各个学校的各个专业的最全面的专业课书单。</view>
+    <view class="btn">
+         <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信登录</button> 
+        <view wx:else class="update">请升级微信版本</view>
+    </view>
+</view>

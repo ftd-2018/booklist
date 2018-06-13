@@ -2,7 +2,7 @@
 <view class="container">
   <ftdNav></ftdNav>
   <view class="search">
-    <input class="search__input" bindinput="bindKeyInput"></input>
+    <input class="search__input" bindinput="bindKeyInput" placeholder="请输入专业名称" placeholder-class="search__placeholder"></input>
     <view class="search__btn" bindtap="search">搜索</view>
   </view>
   <view class="booklist" wx:if="{{courseList.length > 0}}">
@@ -13,4 +13,5 @@
       courseID="{{item.id}}"
     ></ftdBL>
   </view>
+  <view wx:if="{{showTip}}" class="toptip">哎呀，结果溜走了，换个词试试</view>
 </view>

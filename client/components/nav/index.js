@@ -51,12 +51,11 @@ Component({
       appInstance.globalData.token = token;
     }
 
-    this.setData({
-      src: appInstance.globalData.userInfo.avatar,
-    });
-    // this.setData({
-    //   src: appInstance.globalData.userInfo.avatar
-    // })
+    if (appInstance.globalData.userInfo.avatar){
+        this.setData({
+            src: appInstance.globalData.userInfo.avatar,
+        });
+    }
   },
   /**
    * 组件的方法列表

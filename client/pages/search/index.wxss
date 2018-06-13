@@ -28,3 +28,12 @@
   width: 670rpx;
   flex-wrap: wrap;
 }
+.search__placeholder{
+  font-size: 34rpx;
+  color: rgba(36, 37, 61, .5);
+}
+.toptip{
+    font-size: 28rpx;
+    color: #333;
+    padding-top: 100rpx;
+}

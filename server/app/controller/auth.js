@@ -11,7 +11,6 @@ class AuthController extends Base {
 		let token = new this.ctx.helper.Token(this.ctx);
 		const ctx = this.ctx;
 		const code = ctx.request.body.code;
-		console.log(12312, ctx.request.body);
 		const fullUserInfo = ctx.request.body.userInfo;
 		const userInfo = fullUserInfo.userInfo;
 
@@ -37,10 +36,9 @@ class AuthController extends Base {
 		if (fullUserInfo.signature !== sha1) {
 		  return this.fail('登录失败');
 		}
-
 		//根据openid查找用户是否已经注册
-		
 		let userMsg = await ctx.service.user.find({openid: sessionData.data.openid});
+
 		if(util.isEmpty(userMsg)){
 			let result = await ctx.service.user.insert({
 				username: userInfo.nickName,
