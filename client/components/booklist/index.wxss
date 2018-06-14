@@ -11,6 +11,12 @@
   padding-left: 30rpx;
   margin-bottom: 20rpx;
 }
+.ftd-booklist navigator{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 244rpx;
+}
 .ftd-booklist image{
   position: absolute;
   width: 37rpx;
