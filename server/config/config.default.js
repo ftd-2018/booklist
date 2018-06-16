@@ -7,12 +7,12 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1528019285960_9766';
 
   // add your config here
-  config.middleware = ['interceptor'];
+  config.middleware = [];
 
   // 小程序只能存storage，关闭csrf
   config.security = {
     csrf: {
-      enable: false,
+      enable: false
     },
   };
   
@@ -41,6 +41,11 @@ module.exports = appInfo => {
     // 是否加载到 agent 上，默认关闭
     agent: false
   }
+
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+  };
   
   return config;
 };

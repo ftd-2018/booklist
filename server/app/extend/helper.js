@@ -77,3 +77,12 @@ class Token{
 }
 
 exports.Token = Token;
+
+//从1970年开始的毫秒数然后截取10位变成 从1970年开始的秒数
+const timest = function() {
+  var tmp = Date.parse( new Date() ).toString();
+  tmp = tmp.substr(0,10);
+  return tmp;
+}
+
+exports.timest = timest;
