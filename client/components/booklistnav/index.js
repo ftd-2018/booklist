@@ -11,6 +11,10 @@ Component({
     courseID:{
       type: String,
       value: ""
+    },
+    publish:{
+      type: Boolean,
+      value: true
     }
   },
 

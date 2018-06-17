@@ -96,13 +96,9 @@ const request = (url, data = {}, method = "POST")=> {
         'X-Booklist-Token': wx.getStorageSync('token')
       },
       success: function (res) {
-        console.log("success");
-
         if (res.statusCode == 200) {
-
-          if (res.data.errno == 401) {
+          if (res.data.status == -3) {
             //需要登录后才可以操作
-
             let code = null;
             return login().then((res) => {
               code = res.code;
@@ -131,7 +127,6 @@ const request = (url, data = {}, method = "POST")=> {
         } else {
           reject(res.errMsg);
         }
-
       },
       fail: function (err) {
         reject(err)

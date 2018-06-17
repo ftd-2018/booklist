@@ -6,7 +6,9 @@ Vue.use(Router)
 const manage = r => require.ensure([], () => r(require('@/pages/manage')), 'manage');
 const wxk = r => require.ensure([], () => r(require('@/pages/wxk/')), 'wxk');
 const login = r => require.ensure([], () => r(require('@/pages/login/')), 'login'); //登录
-
+const review = r => require.ensure([], () => r(require('@/pages/qualitymanage/review/index.vue')), 'review');  // 文章审核机制
+const enchashment = r => require.ensure([], () => r(require('@/pages/usermanage/enchashment/index.vue')), 'enchashment'); // 提现
+const userInfo = r => require.ensure([], () => r(require('@/pages/usermanage/userinfo/index.vue')), 'userinfo'); // 提现
 
 export default new Router({
     mode: 'history',
@@ -28,10 +30,20 @@ export default new Router({
             path: '/manage',
             component: manage,
             children: [{
-                path: '/wxk',
-                component: wxk,
-                name: '微信库',
-                meta: { nav: ['工作台', '微信库'] },
+                path: '/review',
+                component: review,
+                name: '文章审核机制',
+                meta: {nav: ['内容管理', '文章审核机制']}
+            },{
+                path: '/enchashment',
+                component: enchashment,
+                name: '用户提现记录',
+                meta: {nav: ['用户管理', '用户提现记录']}
+            },{
+                path: '/userinfo',
+                component: userInfo,
+                name: '用户信息',
+                meta: {nav: ['用户管理', '用户信息']}
             }]
         }
     ]

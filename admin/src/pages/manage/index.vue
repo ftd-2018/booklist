@@ -5,8 +5,13 @@
 				<el-menu :default-active="defaultActive" style="height: 100%;" theme="dark" router>
 					<el-menu-item index="manage"><i class="el-icon-menu"></i>首页</el-menu-item>
 					<el-submenu index="2">
-						<template slot="title"><i class="el-icon-document"></i>工作台</template>
-						<el-menu-item index="wxk">微信库</el-menu-item>
+						<template slot="title"><i class="el-icon-document"></i>内容管理</template>
+						<el-menu-item index="review">文章审核机制</el-menu-item>
+					</el-submenu>
+					<el-submenu index="3">
+						<template slot="title"><i class="el-icon-document"></i>用户管理</template>
+						<el-menu-item index="userinfo">用户信息</el-menu-item>
+						<el-menu-item index="enchashment">用户提现记录</el-menu-item>
 					</el-submenu>
 				</el-menu>
 			</el-col>

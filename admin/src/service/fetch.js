@@ -2,6 +2,7 @@ import {
 	baseUrl
 } from './env'
 import Vue from 'vue'
+import router from '@/router/index';
 
 export default async(url = '', data = {}, type = 'POST', token = 'token', method = 'promise') => {
 	type = type.toUpperCase();
@@ -73,6 +74,10 @@ export default async(url = '', data = {}, type = 'POST', token = 'token', method
 				if (requestObj.readyState == 4) {
 					if (requestObj.status == 200) {
 						let obj = requestObj.response
+						if(obj.status == -3){
+							router.push({path: "/login"});
+							return;
+						}
 						if (typeof obj !== 'object') {
 							try{
 								obj = JSON.parse(obj);

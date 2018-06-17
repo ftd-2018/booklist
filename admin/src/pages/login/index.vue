@@ -25,6 +25,7 @@
 
 <script>
 import {login} from '@/service/api';
+import { mapActions } from 'vuex';
 export default {
 	name: 'login',
 	data() {
@@ -71,6 +72,9 @@ export default {
 		// this.initIndentify();
 	},
 	methods: {
+		...mapActions('user',[
+			'getUserInfo'
+		]),
 		async initIndentify(){
 			// let indentify = await getIdentify();
 			// this.identifyImg = "data:image/png;base64,"+indentify.data.kaptcha;
@@ -84,26 +88,25 @@ export default {
 			}
 		},
 		handleLogin() {
+			const that = this;
 			this.$refs.loginForm.validate(async valid => {
 				if (valid) {
-					console.log(this.loginForm);
-					let result = await login(this.loginForm);
-					console.log(13123);
+					let result = await login(that.loginForm);
 					if(result.status == 0){  
-						console.log(222222);
 						localStorage.setItem('token', result.result.token);
-						this.$message({
+						localStorage.setItem('userInfo', JSON.stringify(result.result.userInfo));
+						that.$message({
 							message: result.message,
 							type: 'success'
 						});
 						//登录成功跳回上一级页面
-						let redirect = this.$route.query.redirect || '';
-						this.$router.push({ path: '/' + redirect });
+						let redirect = that.$route.query.redirect || '';
+						that.$router.push({ path: '/' + redirect });
 					}else{
-						 this.$message.error(result.message);
+						 that.$message.error(result.message);
 					}
 				} else {
-					this.$message.error("格式输入有误");
+					that.$message.error("格式输入有误");
 					return false
 				}
 			})

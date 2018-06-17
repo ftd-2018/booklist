@@ -12,6 +12,7 @@
         wx:for="{{booklist}}"
         title="{{item.title}}"
         courseID="{{item.id}}"
+        publish="{{item.publish}}"
         ></ftdBLN>
     </view>
   </view>
