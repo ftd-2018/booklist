@@ -5,7 +5,6 @@ class UserController extends Base {
 		const {ctx, app} = this;
 		const param = ctx.request.body;
 		param.id = app.userId;
-		console.log(123, param);
 		let result = await ctx.service.user.update(param);
 		if(result.affectedRows === 1){
 			return this.success("更新成功");

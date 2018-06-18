@@ -33,5 +33,41 @@ class UserService extends Service {
     const result = await this.app.mysql.select('user', data);
     return result;
   }
+
+  async searchByTelWX(param){
+    const {app} = this;
+    const wechat_id = param.wechat_id || '';
+    const tel_id = param.tel_id || '';
+    const username = param.username || '';
+    let str = `select id,wechat_id,username,tel_id,credit from user where wechat_id LIKE '%${wechat_id}%' AND tel_id LIKE '%${tel_id}%' AND username LIKE '%${username}%'`;
+    const result = await app.mysql.query(str);
+    return result;
+  }
+
+  async updateCredit(id, credit){
+    const {app} = this;
+    const result = await app.mysql.update('user',{
+      id: id,
+      credit : credit
+    });
+    return result;
+  }
 }
 module.exports = UserService;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
