@@ -9,17 +9,42 @@ class CourseService extends Service {
 	async selectByUID(){
 		const result = await this.app.mysql.select('course', {
 			where:{user_id: this.app.userId},
-			columns: ['id', 'title']
+			columns: ['id', 'title', 'publish']
+		});
+		return result;
+	}
+	
+	async selectByID(id){
+		const {ctx,app} = this;
+		const result = await app.mysql.get('course', {
+			id: id
 		});
 		return result;
 	}
 
 	async getByID(id){
-		// const result = await this.app.mysql.get('course', {id: id});
-		const result = await this.app.mysql.query('select c.title,c.my_course,u.username,u.avatar,u.undergraduate,u.master_school from course c left join user u on c.user_id=u.id where c.id='+ id);
+		const {ctx,app} = this;
+		const result = await app.mysql.query('select c.user_id,c.title,c.my_course,c.price,u.username,u.avatar,u.undergraduate,u.master_school from course c left join user u on c.user_id=u.id where c.id='+ id);
 		let tmp = {};
 		if(result.length >= 1){
 			tmp = result[0];
+		}
+
+		// 自己写的课程和价格为0的课程直接公开
+		if(tmp && tmp.user_id && tmp.user_id == app.userId || tmp.price == 0){
+			tmp.isPay = 1;
+			return tmp;
+		}
+		const resultPurchase = await app.mysql.get('purchase',{
+			user_id: app.userId,
+			course_id: id
+		});
+		if(resultPurchase){
+			tmp.isPay = 1;
+		}else{
+			// 未购买课程只公开一半
+			tmp.my_course = ctx.helper.halfArr(tmp.my_course);
+			tmp.isPay = 0;
 		}
 		return tmp;
 	}
@@ -27,7 +52,10 @@ class CourseService extends Service {
 	async selectCourseWithCollect(){
 		const {ctx, app} = this;
 		const collect = await ctx.service.collect.listMyCollect();
-		let allCourse = await app.mysql.select('course');
+		let allCourse = await app.mysql.select('course',{
+			where:{publish: 1},
+			columns: ['id', 'title']
+		});
 		for(let i = 0; i < allCourse.length; i++){
 			allCourse[i].isCollect = 0;   // 未收藏
 			for(let j = 0; j < collect.length; j++){
@@ -42,7 +70,7 @@ class CourseService extends Service {
 	async selectCourseWithTitle(title){
 		const {ctx, app} = this;
 		const collect = await ctx.service.collect.listMyCollect();
-		let allCourse = await app.mysql.query('select * from course where title like "%'+title+'%"');
+		let allCourse = await app.mysql.query('select id,title from course where title like "%'+title+'%" AND publish=1');
 		for(let i = 0; i < allCourse.length; i++){
 			allCourse[i].isCollect = 0;   // 未收藏
 			for(let j = 0; j < collect.length; j++){

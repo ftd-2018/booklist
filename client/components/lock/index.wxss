@@ -1,0 +1,52 @@
+/* components/lock/index.wxss */
+.ftd-lock{
+    width: 750rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -70rpx 20px #fff
+}
+.content{
+    width: 100%;
+    height: 30rpx;
+}
+.ftd-lock .lock{
+    position: relative;
+    width: 670rpx;
+    box-sizing: border-box;
+}
+.lock .lock_img{
+    width: 48rpx;
+    height: 48rpx;
+    padding: 10rpx;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: -32rpx;
+    margin-left: -32rpx;
+}
+.lock .lock_line{
+    border-bottom: 1px solid #EDEDED;
+}
+
+.ftd-lock .intr{
+    margin-top: 30rpx;
+    font-size: 14px;
+    color: #D73316;
+}
+
+.ftd-lock .tip{
+    margin-top: 30rpx;
+    font-size: 14px;
+    color: #818181;
+}
+
+.ftd-lock .payBtn{
+    margin-top: 25rpx;
+    padding: 10rpx 48rpx;
+    background: #FFFAFA;
+    border: 1px solid #FF7055;
+    border-radius: 100rpx;
+    color: #D73316;
+    font-size: 14px;
+}

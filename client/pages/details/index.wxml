@@ -11,4 +11,10 @@
   <view class="booklist" wx:for="{{booklist}}">
     {{item.text}}
   </view>
+  <ftdLock 
+    wx:if="{{isPay == 0}}"
+    price="{{price}}"
+    courseID="{{courseID}}"
+    >
+  </ftdLock>
 </view>

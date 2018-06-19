@@ -1,0 +1,11 @@
+<!--components/lock/index.wxml-->
+<view class="ftd-lock">
+    <view class="content"></view>
+    <view class="lock">
+        <image class="lock_img" src="../../images/lock.png"></image>
+        <view class="lock_line"></view>
+    </view>
+    <view class="intr">剩余50%的内容订阅后可查看</view>
+    <view class="tip">直接购买阅读全文</view>
+    <view class="payBtn" bindtap="pay">{{price}}积分</view>
+</view>

@@ -96,14 +96,14 @@ export default {
 						localStorage.setItem('token', result.result.token);
 						localStorage.setItem('userInfo', JSON.stringify(result.result.userInfo));
 						that.$message({
-							message: result.message,
+							message: result.msg,
 							type: 'success'
 						});
 						//登录成功跳回上一级页面
 						let redirect = that.$route.query.redirect || '';
 						that.$router.push({ path: '/' + redirect });
 					}else{
-						 that.$message.error(result.message);
+						 that.$message.error(result.result);
 					}
 				} else {
 					that.$message.error("格式输入有误");

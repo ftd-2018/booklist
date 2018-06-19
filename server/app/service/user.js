@@ -11,7 +11,8 @@ class UserService extends Service {
         undergraduate: result.undergraduate,
         master_school: result.master_school,
         wechat_id: result.wechat_id,
-        tel_id: result.tel_id
+        tel_id: result.tel_id,
+        credit: result.credit
       };
     }else{
       obj = null;
@@ -52,6 +53,7 @@ class UserService extends Service {
     });
     return result;
   }
+
 }
 module.exports = UserService;
 

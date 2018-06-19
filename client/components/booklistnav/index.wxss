@@ -9,6 +9,12 @@
   border-radius: 16rpx;
   margin-bottom: 20rpx;
 }
+.ftd-booklistnav navigator{
+    width: 500rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 .ftd-booklistnav_verify{
   position: absolute;
   right: 25rpx;

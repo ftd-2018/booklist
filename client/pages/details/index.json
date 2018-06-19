@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "ftdBLN": "/components/booklistnav/index",
-    "ftdNav": "/components/nav/index"
+    "ftdNav": "/components/nav/index",
+    "ftdLock": "/components/lock/index"
   }
 }

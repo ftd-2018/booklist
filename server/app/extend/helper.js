@@ -86,3 +86,11 @@ const timest = function() {
 }
 
 exports.timest = timest;
+
+const halfArr = function(str){
+	let arr = str.split(",");
+	arr = arr.slice(Math.ceil(arr.length/2)).join(',');
+	return arr;
+}
+
+exports.halfArr = halfArr;

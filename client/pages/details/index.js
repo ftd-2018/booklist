@@ -10,13 +10,19 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    booklist:[]
+    booklist:[],
+    isPay: 1,
+    price: '',
+    courseID: ''
   },
   //事件处理函数
   bindViewTap: function() {
   },
   onLoad: function (options) {
     const that = this;
+    this.setData({
+        courseID: options.courseID
+    });
     wx.setNavigationBarTitle({
         title: options.title,
     })
@@ -36,7 +42,9 @@ Page({
             username: result.username,
             undergraduate: result.undergraduate,
             avatar: result.avatar
-          }
+          },
+          isPay: result.isPay,
+          price: result.price
         });
       }
     });
