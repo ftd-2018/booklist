@@ -15,6 +15,7 @@
     wx:if="{{isPay == 0}}"
     price="{{price}}"
     courseID="{{courseID}}"
+    bind:evenPay="hasPay"
     >
   </ftdLock>
 </view>

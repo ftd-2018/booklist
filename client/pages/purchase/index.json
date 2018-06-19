@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ftdBLN": "/components/booklistnav/index",
+    "ftdNav": "/components/nav/index"
+  },
+  "navigationBarTitleText": "我的订阅"
+}

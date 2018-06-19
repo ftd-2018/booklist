@@ -36,6 +36,9 @@ Component({
       url: "/pages/myblist/index",
       text: "我的书单"
     },{
+      url: "/pages/purchase/index",
+      text: "我的订阅"
+    },{
       url: "/pages/setting/index",
       text: "我的设置"
     }],

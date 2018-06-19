@@ -19,14 +19,17 @@ Page({
   bindViewTap: function() {
   },
   onLoad: function (options) {
-    const that = this;
     this.setData({
         courseID: options.courseID
     });
     wx.setNavigationBarTitle({
         title: options.title,
-    })
-    util.request('course/listCourseDetail', {id: options.courseID}).then(res => {
+    });
+    this.getMode();
+  },
+  getMode:function(){
+    const that = this;
+    util.request('course/listCourseDetail', { id: this.data.courseID }).then(res => {
       if (res.status === 0) {
         let arr = [];
         let result = res.result;
@@ -55,5 +58,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  hasPay:function(){
+    this.getMode();
   }
 })

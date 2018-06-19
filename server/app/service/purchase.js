@@ -26,6 +26,12 @@ class PurchaseService extends Service {
 		}
 		return status;
 	}
+
+	async selectMyPurchase(){
+		const {app, ctx} = this;
+		const result = await app.mysql.query('select c.id,c.title from course as c left join purchase as p on c.id=p.course_id where p.user_id='+app.userId+';');
+		return result;
+	}
 }
 
 module.exports = PurchaseService;

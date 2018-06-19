@@ -10,7 +10,12 @@ class PurchaseController extends Base {
 		}else{
 			this.fail("订阅失败");
 		}
+	}
 
+	async listMyPurchase(){
+		const {ctx, app} = this;
+		const result = await ctx.service.purchase.selectMyPurchase();
+		return this.success(result);
 	}
 }
 

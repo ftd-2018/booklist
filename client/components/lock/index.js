@@ -27,6 +27,7 @@ Component({
    */
   methods: {
       pay:function(){
+          const that = this;
           util.request('purchase/addPurchase', { courseID: this.properties.courseID }).then(res => {
             if(res.status == 0){
                 wx.showToast({
@@ -34,7 +35,7 @@ Component({
                     icon: 'success',
                     duration: 2000,
                     complete: function () {
-                        
+                      that.triggerEvent("evenPay");
                     }
                 })
             }else{
@@ -43,7 +44,7 @@ Component({
                     icon: 'fail',
                     duration: 2000,
                     complete: function () {
-                       
+                      that.triggerEvent("evenPay");
                     }
                 })
             }
