@@ -1,2 +1,16 @@
 <!--pages/wallet/index.wxml-->
-<text>pages/wallet/index.wxml</text>
+<view class="container">
+  <ftdNav></ftdNav>
+  <view class="main">
+    <view class="main_intr">账号剩余(积分)</view>
+    <view class="main_credit">280</view>
+    <view class="main_gowx">提现到微信 ></view>
+    <view class="main_recharge">充值 ></view>
+  </view>
+  <view class="list">
+    <view class="list_title">交易记录</view>
+    <view class="list_content">
+      <ftdWallet></ftdWallet>
+    </view>
+  </view>
+</view>

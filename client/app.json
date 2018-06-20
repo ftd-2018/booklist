@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/wallet/index",
     "pages/index/index",
     "pages/details/index",
     "pages/myblist/index",
@@ -9,8 +10,7 @@
     "pages/logs/logs",
     "pages/search/index",
     "pages/login/index",
-    "pages/purchase/index",
-    "pages/wallet/index"
+    "pages/purchase/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

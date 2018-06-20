@@ -1,0 +1,11 @@
+<!--components/purchase/index.wxml-->
+<view class="ftd-wallet">
+  <view class="ftd-wallet_left">
+    <view class="ftd-wallet_title">被订阅</view>
+    <view class="ftd-wallet_status">已支付</view>
+  </view>
+  <view class="ftd-wallet_right">
+    <view class="ftd-wallet_amount">+0.9</view>
+    <view class="ftd-wallet_time">2018-06-12 15:44:31</view>
+  </view>
+</view>
