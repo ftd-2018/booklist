@@ -1,0 +1,46 @@
+/* pages/enchashment/index.wxss */
+.form-box{
+    width:100%;
+    background-color: #fff;
+    margin-top: 20rpx;
+}
+.form_row{
+    width: 720rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    margin-left: 30rpx;
+    border-bottom: 1rpx solid #eee;
+    display: flex;
+    font-size: 28rpx;
+    /*justify-content: space-between;*/
+}
+.form_label{
+    width: 160rpx;
+    color: #000
+}
+.form_right{
+    flex: 1;
+    height: 88rpx;
+    line-height: 88rpx;
+}
+.form_input{
+    height: 100%;
+    font-size: 28rpx;
+    padding-right: 30rpx;
+}
+
+.form_money{
+    width: 720rpx;
+    font-size: 14px;
+    color: #b2b2b2;
+    margin-top:  30rpx;
+    margin-left: 30rpx;
+}
+
+.form-btn{
+    width: 690rpx;
+    height: 80rpx;
+    margin-top:30rpx; 
+    font-size: 30rpx;
+    border-radius: 100rpx;
+}

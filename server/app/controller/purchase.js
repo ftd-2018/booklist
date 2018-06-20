@@ -17,6 +17,20 @@ class PurchaseController extends Base {
 		const result = await ctx.service.purchase.selectMyPurchase();
 		return this.success(result);
 	}
+
+	async listMyPurchaseAboutMe(){
+		const {ctx, app} = this;
+		const result = await ctx.service.purchase.selectPurchaseAboutMe();
+		const userInfo = await ctx.service.user.find({
+			id: app.userId
+		});
+		let param = {
+			list: result,
+			credit: userInfo.credit
+		}
+
+		return this.success(param);
+	}
 }
 
 module.exports = PurchaseController;

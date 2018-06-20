@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "ftdNav": "/components/nav/index"
+    },
+    "navigationBarTitleText": "提现"
+}

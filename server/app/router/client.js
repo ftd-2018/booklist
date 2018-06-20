@@ -12,4 +12,5 @@ module.exports = app => {
   router.post('/user/setInfo', interceptor, controller.user.setInfo);
   router.post('/purchase/addPurchase', interceptor, controller.purchase.addPurchase);
   router.post('/purchase/listMyPurchase', interceptor, controller.purchase.listMyPurchase);
+  router.post('/purchase/listMyPurchaseAboutMe', interceptor, controller.purchase.listMyPurchaseAboutMe);
 }

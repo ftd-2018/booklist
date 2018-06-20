@@ -1,21 +1,22 @@
 {
-  "pages": [
-    "pages/wallet/index",
-    "pages/index/index",
-    "pages/details/index",
-    "pages/myblist/index",
-    "pages/collection/index",
-    "pages/setting/index",
-    "pages/editcourse/index",
-    "pages/logs/logs",
-    "pages/search/index",
-    "pages/login/index",
-    "pages/purchase/index"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/details/index",
+        "pages/myblist/index",
+        "pages/collection/index",
+        "pages/setting/index",
+        "pages/editcourse/index",
+        "pages/logs/logs",
+        "pages/search/index",
+        "pages/login/index",
+        "pages/purchase/index",
+        "pages/enchashment/index",
+        "pages/wallet/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    }
 }

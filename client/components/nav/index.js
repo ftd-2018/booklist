@@ -38,6 +38,9 @@ Component({
     },{
       url: "/pages/purchase/index",
       text: "我的订阅"
+    }, {
+        url: "/pages/wallet/index",
+        text: "我的钱包"
     },{
       url: "/pages/setting/index",
       text: "我的设置"
