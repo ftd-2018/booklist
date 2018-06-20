@@ -4,7 +4,7 @@
   <view class="main">
     <view class="main_intr">账号剩余(积分)</view>
     <view class="main_credit">{{credit}}</view>
-    <view class="main_gowx"><navigator url="../enchashment/index">提现到微信 ></navigator></view>
+    <view class="main_gowx"><navigator url="../enchashment/index?credit={{credit}}">提现到微信 ></navigator></view>
     <view class="main_recharge" bindtap="showCue">充值 ></view>
   </view>
   <view class="list">

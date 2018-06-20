@@ -10,16 +10,16 @@
                 </view>
             </view>
             <view class="form_row">
-                <view class="form_label">提现金额</view>
+                <view class="form_label">提现积分</view>
                 <view class="form_right">
                     <input name="credit" class="form_input" type="text" placeholder="请输入你要提现的积分"></input>
                 </view>
             </view>
             <view class="form_money">
-                钱包总积分 10
+                钱包总积分 {{credit}}
             </view>
             <view class="form_money">
-                 1、积分兑换现金的规则为 1积分 = 0.5 元； 2、每次提现最低为 100 积分；  3、每次提现收取最终现金的30%作为手续费，提现申请后1-3天将会到账。
+                 1、积分兑换现金的规则为 1 积分 = 0.5 元； 2、每次提现最低为 100 积分；  3、每次提现收取最终现金的 30% 作为手续费，提现申请后 1-3 天将会到账。
             </view>
             <button type="warn" class="form-btn" formType="submit" >提交</button>
         </view>

@@ -67,6 +67,9 @@ export default {
 				str = "已提现";
 			}
 			return str;
+		},
+		calculatCash(val){
+			return (val/2*0.7).toFixed(2);
 		}
 	}
 }
