@@ -5,25 +5,26 @@
     myCourse="{{allCourse}}"
   ></ftdNav>
   <view class="course-inp">
-    <text class="label">标题</text>
-    <view class="inp-text"><input name="title" placeholder="请输入标题" 
+    <text class="label">专业</text>
+    <view class="inp-text"><input name="title" placeholder="请输入专业名" 
     bindinput="titleInp"/></view>
   </view>
   <view class="course-inp-two"></view>
   <view class="course-add" wx:if="{{courseList.length}}">
   <view class="add-text" wx:for="{{courseList}}">
-    <text>{{item.name}}</text>
+    <view class="close" bindtap="deleteCourse" data-item-index="{{index}}">x</view>
+    <view class="text">{{item.name}}</view>
   </view>
   </view>
   <view class="course-inp">
     <text class="label">书名</text>
-    <view class="inp-text"><input name="title" placeholder="请输入书名" 
-    bindinput="nameInp"/></view>
+    <view class="inp-text"><input name="title" placeholder="请输入专业下的书名" 
+    bindinput="nameInp" value="{{nameInp}}"/></view>
   </view>
   <view class="course-inp">
     <text class="label">作者</text>
-    <view class="inp-text"><input name="title" placeholder="请输入作者" 
-    bindinput="authorInp"/></view>
+    <view class="inp-text"><input name="title" placeholder="请输入该书的作者名" 
+    bindinput="authorInp" value="{{authorInp}}"/></view>
   </view>
   <view class="course-login">
     <button class="login-btn" bindtap="addBtnClick">添加</button>

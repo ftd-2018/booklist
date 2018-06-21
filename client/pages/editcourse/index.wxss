@@ -14,11 +14,11 @@
 }
 .course-inp .label{
   float:left;
-  width:490rpx;
+  width:390rpx;
 }
 .course-inp .inp-text{
   float:left;
-  width:190rpx;
+  width:290rpx;
   height: 100rpx;
 }
 .inp-text input{
@@ -34,15 +34,20 @@
   flex-direction: column;
 }
 .add-text{
-  width:634rpx;
-  height: 82rpx;
+  position: relative;
+  width:574rpx;
+  padding: 17rpx 0;
   font-size:34rpx;
-  line-height:82rpx;
   background-color:#F5F5F5;
   margin:30rpx auto  0;
   padding-left: 36rpx;
+  padding-right: 60rpx;
   border-radius: 16rpx;
   color: #24253D;
+}
+
+.add-text .text{
+    word-break: break-all;
 }
 
 .course-login .login-btn{
@@ -54,4 +59,17 @@
   color:#FFFFFF;
   background-color:#D73316;
   border-radius: 8rpx;
+}
+
+.close{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background: rgba(0, 0, 0, .6);
+  right: 10rpx;
+  top: 10rpx;
+  color: #fff;
+  line-height: 36rpx;
+  text-align: center;
 }

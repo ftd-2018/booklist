@@ -27,16 +27,36 @@ Page({
     },
     addBtnClick(){
       var list=this.data.courseList;
-      list.push({name:this.data.nameInp+' '+this.data.authorInp});
+      if (this.data.nameInp == '' || this.data.authorInp == ''){
+        wx.showToast({
+            title: '书单信息不能为空',
+            icon: 'none'
+        });
+        return;
+      }
+      list.push({name: "《"+this.data.nameInp+"》"+' '+this.data.authorInp+"著"});
       this.setData({
         courseList:list
-      })
-      var concatStr = '';
-      for(var i = 0; i < list.length; i++){
-        concatStr += list[i].name + ',';
-      }
+      });
       this.setData({
-        allCourse: util.leaveLastStr(concatStr)
+        allCourse: this.regroup(),
+        nameInp: '',
+        authorInp:''
       })
     },
+    regroup(){
+        var list = this.data.courseList;
+        var concatStr = '';
+        for (var i = 0; i < list.length; i++) {
+            concatStr += list[i].name + ',';
+        }
+        return util.leaveLastStr(concatStr);
+    },
+    deleteCourse(e){
+        this.data.courseList.splice(e.target.dataset.itemIndex, 1);
+        this.setData({
+            courseList: this.data.courseList,
+            allCourse: this.regroup() 
+        }); 
+    }
 })

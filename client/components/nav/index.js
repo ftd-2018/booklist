@@ -79,6 +79,20 @@ Component({
       }
     },
     submit:function(){
+      if (this.properties.title == ""){
+        wx.showToast({
+            title: '专业名不能为空',
+            icon: 'none'
+        })
+        return;
+      }
+      if (this.properties.myCourse == ""){
+          wx.showToast({
+              title: '书单信息不能为空',
+              icon: 'none'
+          })
+          return;
+      }
       util.request("course/addCourse", 
       { 
         title: this.properties.title,
