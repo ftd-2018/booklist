@@ -3,11 +3,13 @@
     type="0"
     title="{{titleInp}}"
     myCourse="{{allCourse}}"
+    isAdd="{{isAdd}}"
+    courseID="{{courseID}}"
   ></ftdNav>
   <view class="course-inp">
     <text class="label">专业</text>
     <view class="inp-text"><input name="title" placeholder="请输入专业名" 
-    bindinput="titleInp"/></view>
+    bindinput="titleInp" value="{{titleInp}}"/></view>
   </view>
   <view class="course-inp-two"></view>
   <view class="course-add" wx:if="{{courseList.length}}">

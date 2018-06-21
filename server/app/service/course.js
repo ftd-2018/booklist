@@ -6,6 +6,16 @@ class CourseService extends Service {
     	return result;
 	}
 
+	async update(courseID, myCourse, title){
+		const {ctx, app} = this;
+		const result = await app.mysql.update('course', {
+			id: courseID,
+			my_course: myCourse,
+			title: title
+		});
+		return result;
+	}
+
 	async selectByUID(){
 		const result = await this.app.mysql.select('course', {
 			where:{user_id: this.app.userId},
@@ -32,19 +42,26 @@ class CourseService extends Service {
 
 		// 自己写的课程和价格为0的课程直接公开
 		if(tmp && tmp.user_id && tmp.user_id == app.userId || tmp.price == 0){
-			tmp.isPay = 1;
+			tmp.isPay = true;
+			// 自己写的文章展示编辑
+			if(tmp.user_id == app.userId){
+				tmp.showEdit = true; 
+			}else{
+				tmp.showEdit = false;
+			}
 			return tmp;
 		}
 		const resultPurchase = await app.mysql.get('purchase',{
 			user_id: app.userId,
 			course_id: id
 		});
+		tmp.showEdit = false;
 		if(resultPurchase){
-			tmp.isPay = 1;
+			tmp.isPay = true;
 		}else{
 			// 未购买课程只公开一半
 			tmp.my_course = ctx.helper.halfArr(tmp.my_course);
-			tmp.isPay = 0;
+			tmp.isPay = false;
 		}
 		return tmp;
 	}

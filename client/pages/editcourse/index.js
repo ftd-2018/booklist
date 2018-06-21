@@ -8,7 +8,30 @@ Page({
       authorInp:'',
       courseList:[],
       author:'',
-      allCourse: ''
+      allCourse: '',
+      isAdd: true,
+      courseID: ''
+    },
+    onLoad(options){
+      if(options.myCourse && options.title){
+          let resultList = util.splitStr(options.myCourse);
+          let arr = [];
+          for (let index in resultList) {
+              arr.push({
+                  name: resultList[index]
+              })
+          }
+          this.setData({
+              courseList: arr,
+              titleInp: options.title,
+              isAdd: false,
+              courseID: options.courseID
+          });
+
+          this.setData({
+              allCourse: this.regroup()
+          });
+      }
     },
     titleInp(e){
       this.setData({

@@ -18,6 +18,14 @@ Component({
     myCourse:{
       type: String,
       value: ""
+    },
+    isAdd:{
+        type: Boolean,
+        value: true
+    },
+    courseID:{
+        type: String,
+        value: ''
     }
   },
 
@@ -79,6 +87,7 @@ Component({
       }
     },
     submit:function(){
+      const that = this;
       if (this.properties.title == ""){
         wx.showToast({
             title: '专业名不能为空',
@@ -93,24 +102,46 @@ Component({
           })
           return;
       }
-      util.request("course/addCourse", 
-      { 
-        title: this.properties.title,
-        myCourse: this.properties.myCourse
-      }, 'POST').then(function(res){
-        if(res.status === 0){
-          wx.showToast({
-            title: '添加成功',
-            icon: 'success',
-            duration: 2000,
-            complete:function(){
-              wx.navigateTo({
-                url: '../../pages/index/index',
-              })
-            }
-          })
-        }
-      });
+
+      if(this.data.isAdd){
+          // 添加  
+          util.request("course/addCourse",
+              {
+                  title: this.properties.title,
+                  myCourse: this.properties.myCourse
+              }, 'POST').then(function (res) {
+                  if (res.status === 0) {
+                      wx.showToast({
+                          title: '添加成功',
+                          icon: 'success',
+                          duration: 2000,
+                          complete: function () {
+                              wx.navigateTo({
+                                  url: '../../pages/index/index',
+                              })
+                          }
+                      })
+                  }
+              });
+      }else{
+        // 更新
+        util.request("course/update",{
+            courseID: this.properties.courseID,
+            title: this.properties.title,
+            myCourse: this.properties.myCourse 
+        }).then(res=>{
+            wx.showToast({
+                title: res.result,
+                icon: 'none',
+                duration: 2000,
+                complete: function(){
+                    wx.navigateTo({
+                        url: '../../pages/details/index?courseID=' + that.properties.courseID + '&title=' + that.properties.title,
+                    })
+                }
+            });
+        });
+      }
     }
   }
 })

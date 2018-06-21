@@ -11,16 +11,20 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     booklist:[],
-    isPay: 1,
+    isPay: true,
     price: '',
-    courseID: ''
+    courseID: '',
+    showEdit: false,
+    myCourse: '',
+    title:''
   },
   //事件处理函数
   bindViewTap: function() {
   },
   onLoad: function (options) {
     this.setData({
-        courseID: options.courseID
+        courseID: options.courseID,
+        title: options.title
     });
     wx.setNavigationBarTitle({
         title: options.title,
@@ -47,7 +51,9 @@ Page({
             avatar: result.avatar
           },
           isPay: result.isPay,
-          price: result.price
+          price: result.price,
+          showEdit: result.showEdit,
+          myCourse: result.my_course
         });
       }
     });
@@ -61,5 +67,10 @@ Page({
   },
   hasPay:function(){
     this.getMode();
+  },
+  editCourse:function(){
+      wx.navigateTo({
+          url: '../editcourse/index?myCourse=' + this.data.myCourse + '&title='+this.data.title + '&courseID='+this.data.courseID
+      })
   }
 })

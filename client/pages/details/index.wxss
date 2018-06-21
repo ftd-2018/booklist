@@ -23,6 +23,20 @@
   color: rgba(36,37,61,0.50);
 }
 
+.userinfo__edit{
+    flex: 1;
+}
+
+.userinfo__btn{
+    float: right;
+    padding: 8rpx 15rpx;
+    border: 1px solid #C7C7C7;
+    border-radius: 50rpx;
+    font-size: 26rpx;
+    color: #C7C7C7;
+    margin-top: 15rpx;
+}
+
 .usermotto {
   margin-top: 200px;
 }

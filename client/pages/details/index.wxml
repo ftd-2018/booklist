@@ -7,12 +7,15 @@
       <view class="userinfo__nickname">{{userInfo.username}}</view>
       <view class="userinfo__des">{{userInfo.undergraduate}}</view>
     </view>
+    <view class="userinfo__edit" wx:if="{{showEdit}}">
+        <view class="userinfo__btn" bindtap="editCourse">编辑专业</view>
+    </view>
   </view>
   <view class="booklist" wx:for="{{booklist}}">
     {{item.text}}
   </view>
   <ftdLock 
-    wx:if="{{isPay == 0}}"
+    wx:if="{{!isPay}}"
     price="{{price}}"
     courseID="{{courseID}}"
     bind:evenPay="hasPay"

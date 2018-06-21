@@ -18,6 +18,20 @@ class CourseController extends Base {
 		}
 	}
 
+	async update(){
+		const {ctx} = this;
+		const title = ctx.request.body.title;
+		const myCourse = ctx.request.body.myCourse;
+		const courseID = ctx.request.body.courseID;
+		console.log(title, myCourse, courseID);
+		const result = await ctx.service.course.update(courseID, myCourse, title);
+		if(result.affectedRows === 1){	
+			return this.success("更新成功");
+		}else{
+			return this.fail("更新失败");
+		}
+	}
+
 	async listMyCourse(){
 		const ctx = this.ctx;
 		let result = await ctx.service.course.selectByUID();
