@@ -21,4 +21,6 @@
     bind:evenPay="hasPay"
     >
   </ftdLock>
+  <ftdContact>
+  </ftdContact>
 </view>

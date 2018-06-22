@@ -55,7 +55,7 @@ const getUserInfo = ()=>{
                       }
                   })
               }else{
-                  wx.navigateTo({
+                  wx.redirectTo({
                       url: '/pages/login/index',
                   })
               }

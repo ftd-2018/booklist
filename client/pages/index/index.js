@@ -14,17 +14,25 @@ Page({
   },
   onLoad: function () {
       const that = this;
+      this.goSetting();
       util.request( 'course/listAllCourse').then(res => {
             if (res.status === 0) {
                 that.setData({
                    courseList: res.result
                 });
-                console.log(123, that.data.courseList);
             }
       });
   },
+  goSetting: function () {
+      app.employIdCallback = userInfo => {
+          if (!userInfo.undergraduate || !userInfo.username || !userInfo.wechat_id || !userInfo.tel_id) {
+              wx.redirectTo({
+                  url: '/pages/setting/index',
+              });
+          }
+      }
+  },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

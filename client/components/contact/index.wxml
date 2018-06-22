@@ -1,0 +1,4 @@
+<!--components/contact/index.wxml-->
+<view class='ftd-contact'>
+    <view class="word">客服微信：fcsboy</view>
+</view>

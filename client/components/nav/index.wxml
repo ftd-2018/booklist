@@ -1,6 +1,6 @@
 <!--components/nav/index.wxml-->
 <view class="ftd-nav">
-  <navigator url='/pages/index/index'><image class="ftd-nav__logo" src="{{logo}}"></image></navigator>
+  <navigator url='/pages/index/index' open-type='reLaunch'><image class="ftd-nav__logo" src="{{logo}}"></image></navigator>
   <view class="ftd-nav__write" wx:if="{{type == 1}}">
     <navigator url="/pages/editcourse/index">写课程</navigator>
     <image src="{{penimg}}"></image>
@@ -13,7 +13,7 @@
     <view 
       wx:for="{{navItems}}"
     >
-      <navigator class="ftd-nav__navigator" url="{{item.url}}">{{item.text}}</navigator>
+      <navigator class="ftd-nav__navigator" url="{{item.url}}" open-type="reLaunch">{{item.text}}</navigator>
     </view>
   </view>
 </view>

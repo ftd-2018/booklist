@@ -1,5 +1,5 @@
-<view class="my-setting">
-    <ftdNav></ftdNav>
+<view class="my-setting {{ isStyle ? '' : 'no-padding'}}">
+     <ftdNav wx:if="{{isStyle}}"></ftdNav> 
     <view class="setting-inp">
         <text class="label">用户名</text>
         <view class="inp-text"><input name="title" placeholder="请输入用户名" 

@@ -4,10 +4,9 @@
   background: #F5F5F5;
   border-radius: 16rpx;
   width: 284rpx;
-  height: 74rpx;
+  height: 128rpx;
   font-size: 28rpx;
   color: #24253D;
-  line-height: 74rpx;
   padding-left: 30rpx;
   margin-bottom: 20rpx;
 }
@@ -16,11 +15,21 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 244rpx;
+  height: 80rpx;
+  padding-top: 20rpx;
 }
 .ftd-booklist image{
   position: absolute;
-  width: 37rpx;
-  height: 34rpx;
-  top: 20rpx;
-  right: 20rpx;
+  width: 30rpx;
+  height: 27rpx;
+  top: 81rpx;
+  right: 26rpx;
+}
+
+.payCount{
+    position: absolute;
+    color: #949494;
+    font-size: 22rpx;
+    left: 30rpx;
+    top: 78rpx;
 }

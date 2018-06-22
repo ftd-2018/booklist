@@ -3,5 +3,6 @@
   <view>
     <navigator url="/pages/details/index?courseID={{courseID}}&title={{title}}">{{title}}</navigator>
   </view>
+  <view class="payCount">152人已购买</view>
   <image src="{{collectBackImage}}" bindtap="collectBookList"></image>
 </view>

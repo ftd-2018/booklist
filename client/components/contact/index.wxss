@@ -1,0 +1,13 @@
+/* components/contact/index.wxss */
+.ftd-contact{
+    position: fixed;
+    font-size: 12px;
+    color: #fff;
+    width: 750rpx;
+    bottom: 0;
+    height: 80rpx;
+    line-height: 80rpx; 
+    left: 0;
+    text-align: center;
+    background: rgba(0, 0, 0, .3);
+}

@@ -2,19 +2,20 @@ var user = require('./service/user.js');
 //app.js
 App({
   onLaunch: function () {
+   const that = this;   
       // 查看是否授权
     user.checkLogin().then(res => {
-      this.globalData.userInfo = wx.getStorageSync('userInfo');
-      this.globalData.token = wx.getStorageSync('token');
+        that.globalData.userInfo = wx.getStorageSync('userInfo');
+        that.globalData.token = wx.getStorageSync('token');
+        if (that.employIdCallback) {
+            that.employIdCallback(wx.getStorageSync('userInfo'));
+        }
     }).catch(() => {
       user.loginByWeixin().then(res => {
-        this.globalData.userInfo = res.result.userInfo;
-        this.globalData.token = res.result.token;
-        wx.redirectTo({
-            url: '/pages/index/index'
-        })
+          that.globalData.userInfo = res.result.userInfo;
+          that.globalData.token = res.result.token;
       }).catch((err) => {
-        console.log(err)
+        console.log(err);
       });
     });
   },

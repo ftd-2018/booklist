@@ -71,6 +71,9 @@ Component({
         });
     }
   },
+  moved:function(){
+    console.log(123123);
+  },
   /**
    * 组件的方法列表
    */
@@ -116,8 +119,8 @@ Component({
                           icon: 'success',
                           duration: 2000,
                           complete: function () {
-                              wx.navigateTo({
-                                  url: '../../pages/index/index',
+                              wx.redirectTo({
+                                  url: '../../pages/myblist/index',
                               })
                           }
                       })
@@ -135,7 +138,7 @@ Component({
                 icon: 'none',
                 duration: 2000,
                 complete: function(){
-                    wx.navigateTo({
+                    wx.redirectTo({
                         url: '../../pages/details/index?courseID=' + that.properties.courseID + '&title=' + that.properties.title,
                     })
                 }

@@ -69,7 +69,7 @@ Page({
     this.getMode();
   },
   editCourse:function(){
-      wx.navigateTo({
+      wx.redirectTo({
           url: '../editcourse/index?myCourse=' + this.data.myCourse + '&title='+this.data.title + '&courseID='+this.data.courseID
       })
   }

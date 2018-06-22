@@ -23,7 +23,6 @@ class CourseController extends Base {
 		const title = ctx.request.body.title;
 		const myCourse = ctx.request.body.myCourse;
 		const courseID = ctx.request.body.courseID;
-		console.log(title, myCourse, courseID);
 		const result = await ctx.service.course.update(courseID, myCourse, title);
 		if(result.affectedRows === 1){	
 			return this.success("更新成功");
