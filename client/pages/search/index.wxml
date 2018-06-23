@@ -11,7 +11,10 @@
       title="{{item.title}}"
       isCollect="{{item.isCollect}}"
       courseID="{{item.id}}"
+      payCount="{{item.payCount}}"
     ></ftdBL>
   </view>
   <view wx:if="{{showTip}}" class="toptip">哎呀，结果溜走了，换个词试试</view>
+  <ftdTip>
+  </ftdTip>
 </view>

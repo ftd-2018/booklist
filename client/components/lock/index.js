@@ -30,23 +30,20 @@ Component({
           const that = this;
           util.request('purchase/addPurchase', { courseID: this.properties.courseID }).then(res => {
             if(res.status == 0){
-                wx.showToast({
-                    title: res.result,
-                    icon: 'success',
-                    duration: 2000,
-                    complete: function () {
-                      that.triggerEvent("evenPay");
-                    }
-                })
+              wx.showToast({
+                  title: res.result,
+                  icon: 'success',
+                  duration: 2000,
+                  complete: function () {
+                    that.triggerEvent("evenPay");
+                  }
+              })
             }else{
-                wx.showToast({
-                    title: res.result,
-                    icon: 'fail',
-                    duration: 2000,
-                    complete: function () {
-                      that.triggerEvent("evenPay");
-                    }
-                })
+              wx.showModal({
+                title: "订阅失败",
+                content: res.result,
+                showCancel: false
+              })
             }
           });
       }

@@ -24,4 +24,6 @@
             <button type="warn" class="form-btn" formType="submit" >提交</button>
         </view>
     </form>
+    <ftdTip>
+    </ftdTip>
 </view>

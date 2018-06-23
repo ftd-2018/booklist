@@ -1,0 +1,4 @@
+<!--components/tip/index.wxml-->
+<view class="ftd-tip {{isShow}}" style="top:{{y}}" bindtap="showTip" bind:touchmove="dragTip">
+  客服微信：fcsboy
+</view>

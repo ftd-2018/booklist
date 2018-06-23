@@ -17,13 +17,13 @@
 }
 
 .ftd-wallet_title{
-  font-size: 34rpx;
-  color: black;
+  font-size: 32rpx;
+  color: #333333;
 }
 
 .ftd-wallet_status{
-  font-size: 14px;
-  color: #c7c7c7;
+  font-size: 24rpx;
+  color: #999999;
 }
 
 .ftd-wallet_right{
@@ -33,11 +33,12 @@
 }
 
 .ftd-wallet_amount{
-  color: #ff7055;
-  font-size: 34rpx;
+  color: #D73316;
+  font-size: 32rpx;
+  text-align: right;
 }
 
 .ftd-wallet_time{
-  font-size: 14px;
-  color: #c7c7c7;
+  font-size: 24rpx;
+  color: #999999;
 }

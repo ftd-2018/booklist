@@ -1,14 +1,14 @@
 /**index.wxss**/
 .serach{
-  width: 650rpx;
+  width: 640rpx;
   height: 92rpx;
   margin: 0 auto;
   background: #F5F5F5;
   border-radius: 16rpx;
-  font-size: 34rpx;
-  color: rgba(36, 37, 61, .5);
+  font-size: 30rpx;
+  color: rgba(36, 37, 61, .2);
   line-height: 92rpx;
-  padding-left: 20rpx;
+  padding-left: 30rpx;
   margin-bottom: 36rpx;
 }
 .booklist{

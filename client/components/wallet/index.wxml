@@ -6,6 +6,6 @@
   </view>
   <view class="ftd-wallet_right">
     <view class="ftd-wallet_amount">{{type == 1? '+' : '-'}}{{price}}</view>
-    <view class="ftd-wallet_time">2018-06-12 15:44:31</view>
+    <view class="ftd-wallet_time">{{time}}</view>
   </view>
 </view>

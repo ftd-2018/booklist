@@ -33,4 +33,6 @@
     <view class="setting-login">
         <button class="login-btn" bindtap="loginBtnClick">提交</button>
     </view>
+    <ftdTip>
+    </ftdTip>
 </view>

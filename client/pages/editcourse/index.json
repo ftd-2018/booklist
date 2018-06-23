@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "写课程",
   "usingComponents": {
-    "ftdNav": "/components/nav/index"
+    "ftdNav": "/components/nav/index",
+    "ftdTip": "/components/tip/index"
   }
 }

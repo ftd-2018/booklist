@@ -2,6 +2,7 @@
   "navigationBarTitleText": "分享书单",  
   "usingComponents": {
     "ftdNav": "/components/nav/index",
-    "ftdBL": "/components/booklist/index"
+    "ftdBL": "/components/booklist/index",
+    "ftdTip": "/components/tip/index"
   }
 }

@@ -17,7 +17,8 @@ class PurchaseService extends Service {
 			if(result.affectedRows === 1){
 				const result = await app.mysql.insert("purchase",{
 					course_id: courseID,
-					user_id: app.userId
+					user_id: app.userId,
+					add_time: ctx.helper.timest()
 				});
 				if(result.affectedRows === 1){
 					status = 1;
@@ -48,6 +49,16 @@ class PurchaseService extends Service {
 			}
 		}
 		return result;
+	}
+
+	async getPayCount(courseID){
+		const {app, ctx} = this;
+		const result = await app.mysql.select('purchase', {
+			where: {
+				course_id: courseID
+			}
+		});
+		return result.length;
 	}
 }
 

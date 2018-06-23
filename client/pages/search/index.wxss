@@ -9,7 +9,7 @@
   width: 500rpx;
   background: #F5F5F5;
   border-radius: 16rpx;
-  padding:0 20rpx;
+  padding:0 30rpx;
   margin-right: 30rpx;
 }
 .search__btn{
@@ -29,8 +29,8 @@
   flex-wrap: wrap;
 }
 .search__placeholder{
-  font-size: 34rpx;
-  color: rgba(36, 37, 61, .5);
+  font-size: 30rpx;
+  color: rgba(36, 37, 61, .2);
 }
 .toptip{
     font-size: 28rpx;

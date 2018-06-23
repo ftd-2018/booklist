@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "ftdNav": "/components/nav/index",
-    "ftdWallet": "/components/wallet/index"
+    "ftdWallet": "/components/wallet/index",
+    "ftdTip": "/components/tip/index"
   },
   "navigationBarTitleText": "我的钱包"
 }

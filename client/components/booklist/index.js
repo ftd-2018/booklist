@@ -16,6 +16,10 @@ Component({
     courseID:{
       type: String,
       value: ''
+    },
+    payCount:{
+      type: String,
+      value: "0"
     }
   },
   /**

@@ -8,7 +8,7 @@ class PurchaseController extends Base {
 		if(status == 1){
 			this.success("订阅成功");
 		}else{
-			this.fail("订阅失败");
+			this.fail("账户积分不足，请加客服微信fcsboy，进行充值");
 		}
 	}
 
@@ -30,6 +30,12 @@ class PurchaseController extends Base {
 		}
 
 		return this.success(param);
+	}
+
+	async getPayCount(){
+		const {ctx, app} = this;
+		const result = await ctx.service.purchase.getPayCount();
+		return result;
 	}
 }
 

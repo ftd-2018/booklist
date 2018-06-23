@@ -39,19 +39,24 @@ Component({
     logo: "/images/logo.png",
     navItems:[{
       url: "/pages/collection/index",
-      text: "我的收藏"
+      text: "我的收藏",
+      imgUrl: "/images/1.png"
     },{
       url: "/pages/myblist/index",
-      text: "我的书单"
+      text: "我的书单",
+      imgUrl: "/images/2.png"
     },{
       url: "/pages/purchase/index",
-      text: "我的订阅"
+      text: "我的订阅",
+      imgUrl: "/images/3.png"
     }, {
         url: "/pages/wallet/index",
-        text: "我的钱包"
+        text: "我的钱包",
+        imgUrl: "/images/4.png"
     },{
       url: "/pages/setting/index",
-      text: "我的设置"
+      text: "我的设置",
+      imgUrl: "/images/5.png"
     }],
     isShowNav: false
   },

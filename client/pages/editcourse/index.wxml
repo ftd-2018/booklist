@@ -31,4 +31,6 @@
   <view class="course-login">
     <button class="login-btn" bindtap="addBtnClick">添加</button>
   </view>
+  <ftdTip>
+  </ftdTip>
 </view>

@@ -2,7 +2,7 @@
 <view class="container">
   <ftdNav></ftdNav>
   <view class="serach">
-    <navigator url="/pages/search/index">请输入专业名称</navigator>
+    <navigator hover-class="none" url="/pages/search/index">请输入专业名称</navigator>
   </view>
   <view class="booklist">
     <ftdBL
@@ -10,6 +10,9 @@
       title="{{item.title}}"
       isCollect="{{item.isCollect}}"
       courseID="{{item.id}}"
+      payCount="{{item.payCount}}"
     ></ftdBL>
   </view>
+  <ftdTip>
+  </ftdTip>
 </view>

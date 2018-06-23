@@ -10,7 +10,7 @@ class CourseController extends Base {
 			my_course: myCourse,
 			user_id: ctx.app.userId
 		});
-
+		
 		if(addResult.affectedRows === 1){
 			return this.success("插入成功");
 		}else{

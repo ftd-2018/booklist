@@ -1,4 +1,10 @@
 /**app.wxss**/
+view,image,text,navigator{
+  list-style: none;
+  padding:0;
+  margin:0;
+
+}
 .container {
   font-family: PingFang-SC-Heavy;
   height: 100%;

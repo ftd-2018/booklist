@@ -38,8 +38,7 @@ class AuthController extends Base {
 		}
 		//根据openid查找用户是否已经注册
 		let userMsg = await ctx.service.user.find({openid: sessionData.data.openid});
-
-		if(util.isEmpty(userMsg)){
+		if(ctx.helper.isEmpty(userMsg)){
 			let result = await ctx.service.user.insert({
 				username: userInfo.nickName,
 				register_time: parseInt(new Date().getTime() / 1000),
@@ -52,7 +51,7 @@ class AuthController extends Base {
 			if(result.affectedRows === 1){
 				console.log("插入成功");
 			}
-
+			userMsg = {};
 			userMsg.id = result.insertId;
 		}
 		

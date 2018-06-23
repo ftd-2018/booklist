@@ -1,7 +1,7 @@
 /* components/nav/index.wxss */
 .ftd-nav{
   width: 750rpx;
-  height: 88rpx;
+  height: 90rpx;
   background: #FFFFFF;
   box-shadow: 0 4px 4px 0 rgba(227,227,227,0.50);
   position: absolute;
@@ -10,24 +10,30 @@
 }
 .ftd-nav__logo{
   position: absolute;
-  top: 10rpx;
+  top: 12rpx;
   left: 45rpx;
-  width: 45rpx;
-  height: 67rpx;
+  width: 47rpx;
+  height: 58rpx;
+} 
+.ftd-nav__img{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 12rpx;
 }
 .ftd-nav__write{
   position: absolute;
-  width: 98rpx;
-  padding-right: 12rpx;
-  height: 40rpx;
-  top: 24rpx;
-  right: 110rpx;
-  font-size: 10px;
+  width: 136rpx;
+  padding-right: 24rpx;
+  height: 50rpx;
+  top: 20rpx;
+  right: 114rpx;
+  font-size: 28rpx;
   text-align: right;
   color:#FFFFFF;
-  line-height: 40rpx;
+  line-height: 50rpx;
   background: #D73316;
   background-size: 23rpx 22rpx;
+  border-radius: 70rpx;
 }
 .ftd-nav__sub{
   position: absolute;
@@ -45,19 +51,18 @@
 }
 .ftd-nav__write image{
   position: absolute;
-  left: 8rpx;
-  top: 10rpx;
-  width: 22rpx;
-  height: 23rpx;
+  left: 18rpx;
+  top: 12rpx;
+  width: 28rpx;
+  height: 26rpx;
 }
 .ftd-nav__icon{
   position: absolute;
-  top: 20rpx;
-  right: 38rpx;
-  width: 50rpx;
-  height: 50rpx;
-  float: right;
-  border-radius: 25rpx;
+  top: 15rpx;
+  right: 30rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
 }
 .ftd-nav__panel{
   position: absolute;
@@ -77,15 +82,19 @@
   width: 14rpx;
   height: 14rpx;
   background: #fff;
-  top: -20rpx;
+  top: -23rpx;
   right: 40rpx;
   border-top: 1px solid #F0F0F0;
   border-left: 1px solid #F0F0F0;
   z-index: -1;
 }
+.ftd-nav__content{
+  display: flex;
+  align-items:center;
+  padding:15rpx 0;
+}
 .ftd-nav__navigator{
   font-size: 28rpx;
   color: #24253D;
   text-align: center;
-  padding: 15rpx 0;
 }

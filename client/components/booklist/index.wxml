@@ -1,8 +1,8 @@
 <!--components/booklist/index.wxml-->
 <view class="ftd-booklist">
   <view>
-    <navigator url="/pages/details/index?courseID={{courseID}}&title={{title}}">{{title}}</navigator>
+    <navigator hover-class="none" url="/pages/details/index?courseID={{courseID}}&title={{title}}">{{title}}</navigator>
   </view>
-  <view class="payCount">152人已购买</view>
+  <view class="payCount">{{payCount}}人已购</view>
   <image src="{{collectBackImage}}" bindtap="collectBookList"></image>
 </view>

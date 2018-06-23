@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "ftdBLN": "/components/booklistnav/index",
-    "ftdNav": "/components/nav/index"
+    "ftdNav": "/components/nav/index",
+    "ftdTip": "/components/tip/index"
   },
   "navigationBarTitleText": "我的书单"
 }

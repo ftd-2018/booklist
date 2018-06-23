@@ -16,5 +16,7 @@
         courseID="{{item.course_id}}"
         ></ftdBLN>
     </view>
+    <ftdTip>
+    </ftdTip>
   </view>
 </view>

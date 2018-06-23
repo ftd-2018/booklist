@@ -2,10 +2,15 @@
 <view class="container">
   <ftdNav></ftdNav>
   <view class="main">
+    <view class="main_img">
+      <image src="../../images/pkg.png"></image>
+    </view>
     <view class="main_intr">账号剩余(积分)</view>
     <view class="main_credit">{{credit}}</view>
-    <view class="main_gowx"><navigator url="../enchashment/index?credit={{credit}}">提现到微信 ></navigator></view>
-    <view class="main_recharge" bindtap="showCue">充值 ></view>
+    <view class="main_btn">
+      <view class="main_recharge" bindtap="showCue">充值</view>
+      <view class="main_gowx"><navigator url="../enchashment/index?credit={{credit}}">提现到微信</navigator></view>
+    </view>
   </view>
   <view class="list">
     <view class="list_title">交易记录</view>
@@ -14,9 +19,11 @@
         wx:for="{{listPurchase}}"
         type="{{item.type}}"
         price="{{item.price}}"
-        addTime="{{item.addTime}}"
+        addTime="{{item.add_time}}"
       >
       </ftdWallet>
     </view>
   </view>
+  <ftdTip>
+  </ftdTip>
 </view>
