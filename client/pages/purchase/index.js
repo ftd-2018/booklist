@@ -17,9 +17,8 @@ Page({
     });
   },
   goToWrite: function () {
-    wx.navigateTo({
-      url: '../setting/index',
-      url: '../editcourse/index'
+    wx.reLaunch({
+      url: '../index/index'
     });
   }
 })

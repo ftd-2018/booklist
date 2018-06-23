@@ -91,14 +91,17 @@ Page({
             if (res.status === 0) {
                 wx.showToast({
                     title: res.result,
-                    icon: 'success',
+                    icon: 'none',
                     duration: 2000,
                     complete: function(){
-                        if(!that.data.isStyle){
-                            wx.redirectTo({
-                                url: '/pages/index/index',
-                            });
-                        }
+                        // if(!that.data.isStyle){
+                            // wx.redirectTo({
+                            //     url: '/pages/index/index',
+                            // });
+                        // }
+                        setTimeout(function(){
+                          wx.navigateBack();
+                        },2000);
                     }
                 });
                 Object.assign(app.globalData.userInfo, param);

@@ -92,6 +92,8 @@ class CourseService extends Service {
 		let allCourse = await app.mysql.query('select id,title from course where title like "%'+title+'%" AND publish=1');
 		for(let i = 0; i < allCourse.length; i++){
 			allCourse[i].isCollect = 0;   // 未收藏
+			let length = await ctx.service.purchase.getPayCount(allCourse[i].id);
+			allCourse[i].payCount = length;
 			for(let j = 0; j < collect.length; j++){
 				if(collect[j].course_id == allCourse[i].id){
 					allCourse[i].isCollect = 1;  // 已收藏
