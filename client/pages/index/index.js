@@ -14,7 +14,6 @@ Page({
   },
   onLoad: function () {
       const that = this;
-      this.goSetting();
       util.request( 'course/listAllCourse').then(res => {
             if (res.status === 0) {
                 that.setData({
@@ -22,15 +21,6 @@ Page({
                 });
             }
       });
-  },
-  goSetting: function () {
-      app.employIdCallback = userInfo => {
-          if (!userInfo.undergraduate || !userInfo.username || !userInfo.wechat_id || !userInfo.tel_id) {
-              wx.redirectTo({
-                  url: '/pages/setting/index',
-              });
-          }
-      }
   },
   getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo

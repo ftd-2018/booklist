@@ -61,6 +61,21 @@
   border-radius: 8rpx;
 }
 
+.login-submit{
+  width:686rpx;
+  height:93rpx;
+  line-height:93rpx;
+  background: #fff;
+  border: 1px solid #D73316; 
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: #D73316;
+}
+.login-submit.noMessage{
+  border: 1px solid rgba(36, 37, 61, .2);
+  color: rgba(36, 37, 61, .2);
+}
+
 .close{
   position: absolute;
   width: 40rpx;

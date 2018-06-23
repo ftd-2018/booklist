@@ -10,7 +10,8 @@ Page({
       author:'',
       allCourse: '',
       isAdd: true,
-      courseID: ''
+      courseID: '',
+      type: false
     },
     onLoad(options){
       if(options.myCourse && options.title){
@@ -31,6 +32,25 @@ Page({
           this.setData({
               allCourse: this.regroup()
           });
+      }
+
+      this.goSetting();
+    },
+    goSetting: function () {
+      if (!app.globalData.userInfo.undergraduate || !app.globalData.userInfo.username || !app.globalData.userInfo.wechat_id || !app.globalData.userInfo.tel_id) {
+        wx.showToast({
+          title: '先完善个人信息',
+          icon: 'none',
+          duration: 2000,
+          complete:function(){
+            setTimeout(function(){
+              wx.redirectTo({
+                url: '/pages/setting/index',
+              });
+            },2000);
+          }
+        })
+        
       }
     },
     titleInp(e){
@@ -81,5 +101,69 @@ Page({
             courseList: this.data.courseList,
             allCourse: this.regroup() 
         }); 
+    },
+    submitHandle(){
+      const that = this;
+      if (this.data.courseList.length <= 0)
+        return;
+      if (this.data.titleInp == "") {
+        wx.showToast({
+          title: '专业名不能为空',
+          icon: 'none'
+        })
+        return;
+      }
+      if (this.data.allCourse == "") {
+        wx.showToast({
+          title: '书单信息不能为空',
+          icon: 'none'
+        })
+        return;
+      }
+
+      if (this.data.isAdd) {
+        // 添加  
+        util.request("course/addCourse",
+          {
+            title: this.data.titleInp,
+            myCourse: this.data.allCourse
+          }, 'POST').then(function (res) {
+            if (res.status === 0) {
+              wx.showToast({
+                title: '添加成功',
+                icon: 'none',
+                duration: 2000,
+                complete: function () {
+                  setTimeout(function(){
+                    wx.redirectTo({
+                      url: '../../pages/myblist/index',
+                    });
+                  },2000);
+                }
+              })
+            }
+          });
+      } else {
+        // 更新
+        util.request("course/update", {
+          courseID: this.data.courseID,
+          title: this.data.titleInp,
+          myCourse: this.data.allCourse
+        }).then(res => {
+          wx.showToast({
+            title: res.result,
+            icon: 'none',
+            duration: 2000,
+            complete: function () {
+              setTimeout(function () {
+                wx.redirectTo({
+                  url: '../../pages/details/index?courseID=' + that.data.courseID + '&title=' + that.data.titleInp,
+                });
+              }, 2000);
+              
+            }
+          });
+        });
+      }
     }
 })

@@ -7,9 +7,9 @@ App({
     user.checkLogin().then(res => {
         that.globalData.userInfo = wx.getStorageSync('userInfo');
         that.globalData.token = wx.getStorageSync('token');
-        if (that.employIdCallback) {
-            that.employIdCallback(wx.getStorageSync('userInfo'));
-        }
+        // if (that.employIdCallback) {
+        //     that.employIdCallback(wx.getStorageSync('userInfo'));
+        // }
     }).catch(() => {
       user.loginByWeixin().then(res => {
           that.globalData.userInfo = res.result.userInfo;

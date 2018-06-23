@@ -13,15 +13,9 @@ Page({
       user.loginByWeixin().then(res => {
           app.globalData.userInfo = res.result.userInfo;
           app.globalData.token = res.result.token;
-          if (!app.globalData.userInfo.undergraduate || !app.globalData.userInfo.username || !app.globalData.userInfo.wechat_id || !app.globalData.userInfo.tel_id){
-              wx.redirectTo({
-                  url: '/pages/setting/index'
-              })
-          }else{
-              wx.redirectTo({
-                  url: '/pages/index/index'
-              })
-          }
+          wx.redirectTo({
+            url: '/pages/index/index'
+          })
       }).catch((err) => {
           console.log(err)
       });

@@ -1,5 +1,5 @@
 <!--components/booklistnav/index.wxml-->
 <view class="ftd-booklistnav">
-  <navigator url="/pages/details/index?courseID={{courseID}}&title={{title}}">{{title}}</navigator>
+  <navigator hover-class="none" url="/pages/details/index?courseID={{courseID}}&title={{title}}">{{title}}</navigator>
   <view class='ftd-booklistnav_verify' wx:if="{{!publish}}">审核中</view>
 </view>

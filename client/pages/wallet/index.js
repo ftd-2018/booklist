@@ -28,9 +28,9 @@ Page({
   
   showCue:function(){
       wx.showModal({
-          content: "请加管理员「 微信号 fcsboy 」，再进行充值",
-          confirmText: "确定",
-          cancelText: "取消"
+        content: "加客服微信「 fcsboy 」，再进行充值",
+        confirmText: "确定",
+        showCancel: false
       });
   }
 })

@@ -7,8 +7,7 @@ Page({
       collegesInp:'',
       graduateInp:'',
       weiChatInp:'',
-      mobileInp:'',
-      isStyle: true
+      mobileInp:''
     },
     onLoad:function(){  
       this.setData({
@@ -18,11 +17,6 @@ Page({
           weiChatInp: app.globalData.userInfo.wechat_id,
           mobileInp: app.globalData.userInfo.tel_id
       });
-      if (!this.data.userInp || !this.data.collegesInp || !this.data.weiChatInp || !this.data.mobileInp) {
-          this.setData({
-              isStyle: false
-          });
-      }    
     },
     userInp(e){
       this.setData({
@@ -64,7 +58,7 @@ Page({
             });
             return; 
         }
-
+        console.log(123,this.data.collegesInp)
         if (this.data.collegesInp == ''){
             wx.showToast({
                 title: '本科院校不能为空',

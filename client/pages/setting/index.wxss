@@ -3,9 +3,6 @@
   flex-direction: column;
    padding: 118rpx 0 0 0; 
 }
-.no-padding{
-    padding: 0;
-}
 .setting-inp{
   width:750rpx;
   height: 100rpx;

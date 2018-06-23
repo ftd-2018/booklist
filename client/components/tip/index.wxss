@@ -10,6 +10,7 @@
   padding: 15rpx 20rpx 15rpx 20rpx;
   color: #fff;
   font-size: 24rpx;
+  z-index: 9999;
 }
 
 .animated {

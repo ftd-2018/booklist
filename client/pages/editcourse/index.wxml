@@ -1,10 +1,6 @@
 <view class="edit-course">
   <ftdNav
-    type="0"
-    title="{{titleInp}}"
-    myCourse="{{allCourse}}"
-    isAdd="{{isAdd}}"
-    courseID="{{courseID}}"
+    type="{{type}}"
   ></ftdNav>
   <view class="course-inp">
     <text class="label">专业</text>
@@ -30,6 +26,7 @@
   </view>
   <view class="course-login">
     <button class="login-btn" bindtap="addBtnClick">添加</button>
+    <button class="login-submit {{courseList.length > 0 ? '':'noMessage'}}" bindtap="submitHandle">提交</button>
   </view>
   <ftdTip>
   </ftdTip>

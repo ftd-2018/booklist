@@ -5,7 +5,7 @@
     <view class="course__title">我的订阅</view>
     <view class="course-blank" wx:if="{{myPurchase.length <= 0}}">
       <image src="../../images/blank-page.png" class="blank-img"></image>
-      <text class="blank-text" bindtap="goToWrite">还没有订阅专业课哦，现在去<text class="write-course">写课程</text></text>
+      <text class="blank-text" bindtap="goToWrite">还没有订阅专业课哦，现在去<text class="write-course">订阅课程</text></text>
     </view>
     <view class="course-data" wx:else>
       <ftdBLN 
