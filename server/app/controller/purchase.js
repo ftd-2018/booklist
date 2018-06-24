@@ -14,7 +14,9 @@ class PurchaseController extends Base {
 
 	async listMyPurchase(){
 		const {ctx, app} = this;
-		const result = await ctx.service.purchase.selectMyPurchase();
+		const page = ctx.request.body.page;
+		const size = ctx.request.body.size;
+		const result = await ctx.service.purchase.selectMyPurchase(page, size);
 		return this.success(result);
 	}
 

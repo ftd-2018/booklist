@@ -1,5 +1,5 @@
 /* components/booklistnav/index.wxss */
-.ftd-booklistnav{
+.ftd-booklistnav_all{
   position: relative;
   width: 630rpx;
   padding: 17rpx 22rpx 17rpx 18rpx;
@@ -9,7 +9,7 @@
   border-radius: 16rpx;
   margin-bottom: 20rpx;
 }
-.ftd-booklistnav navigator{
+.ftd-booklistnav_all navigator{
     width: 500rpx;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -24,4 +24,11 @@
   border: 1px solid #D73316;
   padding: 5rpx 10rpx;
   color: #D73316;
+}
+
+.bottomTips{
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
 }

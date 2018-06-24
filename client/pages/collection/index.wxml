@@ -11,9 +11,9 @@
     </view>
     <view class="course-data" wx:else>
       <ftdBLN 
-        wx:for="{{myCollection}}"
-        title="{{item.title}}"
-        courseID="{{item.course_id}}"
+        collections="{{myCollection}}"
+        hasMore="{{hasMore}}"
+        loading="{{loading}}"
         ></ftdBLN>
     </view>
     <ftdTip>

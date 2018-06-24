@@ -1,5 +1,12 @@
 <!--components/booklistnav/index.wxml-->
 <view class="ftd-booklistnav">
-  <navigator hover-class="none" url="/pages/details/index?courseID={{courseID}}&title={{title}}">{{title}}</navigator>
-  <view class='ftd-booklistnav_verify' wx:if="{{!publish}}">审核中</view>
+  <view class="ftd-booklistnav_all" wx:for="{{collections}}">
+    <navigator hover-class="none" url="/pages/details/index?courseID={{item.course_id}}&title={{item.title}}">{{item.title}}</navigator>
+    <view class='ftd-booklistnav_verify' wx:if="{{!item.publish}}">审核中</view>
+  </view>
+  <view class="bottomTips" wx:if="{{ hasMore }}">
+    <view wx:if="{{loading}}">
+      <text>加载中...</text>
+    </view>
+  </view>
 </view>

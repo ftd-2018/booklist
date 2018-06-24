@@ -31,6 +31,12 @@ class CollectService extends Service{
 		const result = await app.mysql.query('select * from course left join collect on course.id=collect.course_id where collect.user_id='+app.userId+';');
 		return result;
 	}
+
+	async listMyCollectRange(page, size){
+		const {app} = this;
+		const result = await app.mysql.query('select collect.course_id,course.title,course.publish from course left join collect on course.id=collect.course_id where collect.user_id='+app.userId+' LIMIT '+(page-1)*size+','+size);
+		return result;
+	}
 }
 
 module.exports = CollectService;

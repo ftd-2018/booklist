@@ -2,7 +2,7 @@
 <view class="ftd-nav">
   <navigator url='/pages/index/index' open-type='reLaunch'><image class="ftd-nav__logo" src="{{logo}}"></image></navigator>
   <view class="ftd-nav__write" wx:if="{{type}}">
-    <navigator url="/pages/editcourse/index">写课程</navigator>
+    <navigator url="/pages/editcourse/index">写书单</navigator>
     <image src="{{penimg}}"></image>
   </view>
   <image class="ftd-nav__icon" src="{{src}}" bindtap="showNav"></image>

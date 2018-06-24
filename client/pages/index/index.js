@@ -4,7 +4,11 @@ const app = getApp()
 
 Page({
   data: {
-    courseList:[]
+    page: 1,
+    size: 30,
+    courseList:[],
+    hasMore: false,
+    loading: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -12,21 +16,53 @@ Page({
       url: '../myblist/index'
     })
   },
+  loadMore: function () {
+    const that = this;
+    if (!this.data.hasMore) return;
+    util.request('course/listAllCourse', { page:this.data.page++, size: this.data.size}).then(res => {
+      if (res.status === 0) {
+        wx.stopPullDownRefresh();
+        if (res.result.length) {
+          that.setData({
+            courseList: that.data.courseList.concat(res.result),
+            loading: false
+          });
+        }else{
+          that.setData({ hasMore: false }) 
+        }
+        
+      }
+    });
+  },
   onLoad: function () {
-      const that = this;
-      util.request( 'course/listAllCourse').then(res => {
-            if (res.status === 0) {
-                that.setData({
-                   courseList: res.result
-                });
-            }
-      });
+      this.setData({ hasMore: true, loading:true})
+      this.loadMore();
   },
   getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    });
+  },
+  onReachBottom() {
+    this.setData({
+      loading: true
     })
+    this.loadMore()
+  },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {
+    this.setData({
+      courseList:[],
+      page: 1
+    });
+    this.setData({
+      hasMore:true,
+      loading: true
+    });
+    this.loadMore();
   }
 })

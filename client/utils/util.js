@@ -144,6 +144,12 @@ const splitStr = (str) =>{
   return str.split(",");
 }
 
+const changeArr = (arr, source, target) => {
+  const reg = new RegExp(source, "g");
+  let n = JSON.parse(JSON.stringify(arr).replace(reg, target));
+  return n;
+}
+
 module.exports = {
   login,
   getUserInfo,
@@ -151,5 +157,6 @@ module.exports = {
   request,
   leaveLastStr,
   splitStr,
-  formatTime
+  formatTime,
+  changeArr
 }

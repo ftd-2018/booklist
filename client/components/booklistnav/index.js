@@ -4,20 +4,22 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    title:{
-      type: String,
-      value: ""
+    collections:{
+      type:Array,
+      value:[]
     },
-    courseID:{
-      type: String,
-      value: ""
+    hasMore:{
+      type:Boolean,
+      value: false
     },
-    publish:{
+    loading:{
       type: Boolean,
-      value: true
+      value: false
     }
   },
-
+  ready(){
+    console.log(this.properties.collections);
+  },
   /**
    * 组件的初始数据
    */

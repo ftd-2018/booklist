@@ -34,6 +34,13 @@
 }
 .toptip{
     font-size: 28rpx;
-    color: #333;
+    color: #ccc;
     padding-top: 100rpx;
+}
+
+.bottomTips{
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
 }

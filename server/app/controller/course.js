@@ -32,8 +32,10 @@ class CourseController extends Base {
 	}
 
 	async listMyCourse(){
-		const ctx = this.ctx;
-		let result = await ctx.service.course.selectByUID();
+		const {ctx} = this;
+		const page = ctx.request.body.page;
+		const size = ctx.request.body.size;
+		let result = await ctx.service.course.selectByUID(page, size);
 		return this.success(result);
 	}
 
@@ -46,14 +48,18 @@ class CourseController extends Base {
 
 	async listAllCourse(){
 		const {ctx} = this;
-		const getCollectCourse = await ctx.service.course.selectCourseWithCollect();
+		const page = ctx.request.body.page;
+		const size = ctx.request.body.size;
+		const getCollectCourse = await ctx.service.course.selectCourseWithCollect(page, size);
 		return this.success(getCollectCourse);
 	}
 
 	async listSearchCourse(){
 		const {ctx} = this;
 		const title = ctx.request.body.title;
-		const getSearchCourse = await ctx.service.course.selectCourseWithTitle(title);
+		const page = ctx.request.body.page;
+		const size = ctx.request.body.size; 
+		const getSearchCourse = await ctx.service.course.selectCourseWithTitle(title, page, size);
 		return this.success(getSearchCourse);
 	}
 }

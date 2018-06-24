@@ -8,63 +8,48 @@ Page({
   data: {
     inputValue: '',
     courseList: [],
-    showTip: false
+    showTip: false,
+    page: 1,
+    size: 30,
+    hasMore: false,
+    loading:false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  loadMore:function(){
+    const that = this;
+    if (!this.data.hasMore) return;
+    util.request("course/listSearchCourse", { title: that.data.inputValue, page: this.data.page++, size: this.data.size}).then(res => {
+      if (res.status === 0) {
+        if (res.result.length){
+          that.setData({
+            courseList: that.data.courseList.concat(res.result),
+            loading:false
+          });
+        }else{
+          that.setData({ hasMore: false })
+        }  
+        if (that.data.courseList.length == 0){
+          that.setData({
+            showTip: true
+          });
+        }
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    this.setData({
+      loading: true
+    })
+    this.loadMore();
   },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
   bindKeyInput: function(e){
     this.setData({
@@ -72,25 +57,15 @@ Page({
     });
   },
   search: function(){
-      const that = this;
-      wx.showLoading({
-          title: '加载中',
-      });
-      util.request("course/listSearchCourse", { title: that.data.inputValue }).then(res => {
-        if (res.status === 0) {
-            wx.hideLoading();
-            if(res.result.length == 0){
-                that.setData({
-                    "showTip": true,
-                    "courseList": []
-                });
-            }else{
-                that.setData({
-                    "courseList": res.result,
-                    "showTip": false
-                });
-            }
-        }
+    this.setData({
+      courseList: [],
+      page: 1
     });
+    this.setData({
+      hasMore: true,
+      loading:true,
+      showTip: false
+    });
+    this.loadMore();
   }
 })

@@ -13,6 +13,11 @@
       payCount="{{item.payCount}}"
     ></ftdBL>
   </view>
+  <view class="bottomTips" wx:if="{{ hasMore }}">
+    <view wx:if="{{ loading }}">
+      <text>加载中...</text>
+    </view>
+  </view>
   <ftdTip>
   </ftdTip>
 </view>

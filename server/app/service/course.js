@@ -16,10 +16,12 @@ class CourseService extends Service {
 		return result;
 	}
 
-	async selectByUID(){
+	async selectByUID(page, size){
 		const result = await this.app.mysql.select('course', {
 			where:{user_id: this.app.userId},
-			columns: ['id', 'title', 'publish']
+			columns: ['id', 'title', 'publish'],
+			limit: size,
+			offset: (page-1)*size
 		});
 		return result;
 	}
@@ -66,12 +68,14 @@ class CourseService extends Service {
 		return tmp;
 	}
 
-	async selectCourseWithCollect(){
+	async selectCourseWithCollect(page, size){
 		const {ctx, app} = this;
 		const collect = await ctx.service.collect.listMyCollect();
 		let allCourse = await app.mysql.select('course',{
 			where:{publish: 1},
-			columns: ['id', 'title']
+			columns: ['id', 'title'],
+			limit: size,
+			offset: (page - 1)*size
 		});
 		for(let i = 0; i < allCourse.length; i++){
 			allCourse[i].isCollect = 0;   // 未收藏
@@ -86,10 +90,10 @@ class CourseService extends Service {
 		return allCourse;
 	}
 
-	async selectCourseWithTitle(title){
+	async selectCourseWithTitle(title, page, size){
 		const {ctx, app} = this;
 		const collect = await ctx.service.collect.listMyCollect();
-		let allCourse = await app.mysql.query('select id,title from course where title like "%'+title+'%" AND publish=1');
+		let allCourse = await app.mysql.query('select id,title from course where title like "%'+title+'%" AND publish=1 LIMIT '+(page-1)*size+','+size);
 		for(let i = 0; i < allCourse.length; i++){
 			allCourse[i].isCollect = 0;   // 未收藏
 			let length = await ctx.service.purchase.getPayCount(allCourse[i].id);

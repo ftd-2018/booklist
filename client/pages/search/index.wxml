@@ -15,6 +15,11 @@
     ></ftdBL>
   </view>
   <view wx:if="{{showTip}}" class="toptip">哎呀，结果溜走了，换个词试试</view>
+  <view class="bottomTips" wx:if="{{ hasMore }}">
+    <view wx:if="{{loading}}">
+      <text>加载中...</text>
+    </view>
+  </view>
   <ftdTip>
   </ftdTip>
 </view>

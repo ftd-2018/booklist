@@ -4,5 +4,6 @@
     "ftdNav": "/components/nav/index",
     "ftdBL": "/components/booklist/index",
     "ftdTip": "/components/tip/index"
-  }
+  },
+  "enablePullDownRefresh":true
 }

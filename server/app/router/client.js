@@ -8,6 +8,7 @@ module.exports = app => {
   router.post('/course/listAllCourse', interceptor, controller.course.listAllCourse);
   router.post('/collect/addOrDeleteCollect', interceptor, controller.collect.addOrDeleteCollect);
   router.post('/collect/listMyCollect', interceptor, controller.collect.listMyCollect);
+  router.post('/collect/listMyCollectRange', interceptor, controller.collect.listMyCollectRange);
   router.post('/course/listSearchCourse', interceptor, controller.course.listSearchCourse);
   router.post('/user/setInfo', interceptor, controller.user.setInfo);
   router.post('/purchase/addPurchase', interceptor, controller.purchase.addPurchase);
@@ -16,4 +17,5 @@ module.exports = app => {
   router.post('/enchashment/add', interceptor, controller.enchashment.add);
   router.post('/course/update', interceptor, controller.course.update);
   router.post('/purchase/getPayCount', interceptor, controller.purchase.getPayCount);
+
 }

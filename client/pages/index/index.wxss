@@ -17,3 +17,9 @@
   width: 670rpx;
   flex-wrap: wrap;
 }
+.bottomTips{
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
+}

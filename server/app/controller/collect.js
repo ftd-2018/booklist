@@ -7,6 +7,14 @@ class CollectController extends Base {
 		return this.success(result);
 	}
 
+	async listMyCollectRange(){
+		const {ctx} = this;
+		const page = ctx.request.body.page;
+		const size = ctx.request.body.size;
+		const result = await ctx.service.collect.listMyCollectRange(page, size);
+		return this.success(result);
+	}
+
 	async addOrDeleteCollect(){
 		const {ctx, app} = this;
 		const courseID = ctx.request.body.courseID;
