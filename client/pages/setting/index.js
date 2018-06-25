@@ -7,13 +7,15 @@ Page({
       collegesInp:'',
       graduateInp:'',
       weiChatInp:'',
-      mobileInp:''
+      mobileInp:'',
+      introInp:''
     },
     onLoad:function(){  
       this.setData({
           userInp: app.globalData.userInfo.username,
           collegesInp: app.globalData.userInfo.undergraduate,
           graduateInp: app.globalData.userInfo.master_school,
+          introInp: app.globalData.userInfo.introduce,
           weiChatInp: app.globalData.userInfo.wechat_id,
           mobileInp: app.globalData.userInfo.tel_id
       });
@@ -38,6 +40,11 @@ Page({
         graduateInp:e.detail.value
       })
     },
+    introInp(e) {
+        this.setData({
+            introInp: e.detail.value
+        })
+    },
     weiChatInp(e){
       this.setData({
         weiChatInp:e.detail.value
@@ -58,7 +65,6 @@ Page({
             });
             return; 
         }
-        console.log(123,this.data.collegesInp)
         if (this.data.collegesInp == ''){
             wx.showToast({
                 title: '本科院校不能为空',
@@ -66,7 +72,13 @@ Page({
             });
             return;
         }
-
+        if (this.data.introInp == '') {
+            wx.showToast({
+                title: '个人简介不能为空',
+                icon: 'none'
+            });
+            return;
+        }
         if (this.data.weiChatInp == ''){
             wx.showToast({
                 title: '微信号不能为空',
@@ -85,6 +97,7 @@ Page({
         param.username = this.data.userInp;
         param.undergraduate = this.data.collegesInp;
         param.master_school = this.data.graduateInp;
+        param.introduce = this.data.introInp;
         param.wechat_id = this.data.weiChatInp;
         param.tel_id = this.data.mobileInp;
         util.request('user/setInfo', param).then(res => {
@@ -94,11 +107,6 @@ Page({
                     icon: 'none',
                     duration: 2000,
                     complete: function(){
-                        // if(!that.data.isStyle){
-                            // wx.redirectTo({
-                            //     url: '/pages/index/index',
-                            // });
-                        // }
                         setTimeout(function(){
                           wx.navigateBack();
                         },2000);

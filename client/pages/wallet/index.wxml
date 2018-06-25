@@ -22,6 +22,11 @@
         addTime="{{item.add_time}}"
       >
       </ftdWallet>
+      <view class="bottomTips" wx:if="{{ hasMore }}">
+        <view wx:if="{{loading}}">
+        <text>加载中...</text>
+        </view>
+      </view>
     </view>
   </view>
   <ftdTip>

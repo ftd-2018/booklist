@@ -3,7 +3,7 @@
     <view class="setting-inp">
         <text class="label">用户名</text>
         <view class="inp-text"><input name="title" placeholder="请输入用户名" 
-        bindinput="userInp" value='{{userInp}}'/></view>
+        bindinput="userInp" value='{{userInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <!-- <view class="setting-inp">
         <text class="label">我的图像</text>
@@ -13,22 +13,27 @@
     <view class="setting-inp">
         <text class="label">本科院校</text>
         <view class="inp-text"><input name="title" placeholder="请输入本科院校" 
-        bindinput="collegesInp" value='{{collegesInp}}'/></view>
+        bindinput="collegesInp" value='{{collegesInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <view class="setting-inp">
-        <text class="label">研究生院校</text>
+        <text class="label">研究生院校（选填）</text>
         <view class="inp-text"><input name="title" placeholder="请输入研究生院校" 
-        bindinput="graduateInp" value='{{graduateInp}}'/></view>
+        bindinput="graduateInp" value='{{graduateInp}}' placeholder-class="search-placeholder"/></view>
+    </view>
+    <view class="setting-inp">
+        <text class="label">个人简介</text>
+        <view class="inp-text"><input name="title" placeholder="请输入个人简介" 
+        bindinput="introInp" value='{{introInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <view class="setting-inp">
         <text class="label">微信号</text>
         <view class="inp-text"><input name="title" placeholder="请输入微信号" 
-        bindinput="weiChatInp" value='{{weiChatInp}}'/></view>
+        bindinput="weiChatInp" value='{{weiChatInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <view class="setting-inp">
         <text class="label">手机号</text>
         <view class="inp-text"><input name="title" placeholder="请输入手机号" 
-        bindinput="mobileInp" value='{{mobileInp}}'/></view>
+        bindinput="mobileInp" value='{{mobileInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <view class="setting-login">
         <button class="login-btn" bindtap="loginBtnClick">提交</button>

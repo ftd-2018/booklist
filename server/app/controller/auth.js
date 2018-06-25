@@ -67,7 +67,8 @@ class AuthController extends Base {
 			undergraduate: resultNewUser.undergraduate,
 			master_school: resultNewUser.master_school,
 			wechat_id: resultNewUser.wechat_id,
-			tel_id: resultNewUser.tel_id
+			tel_id: resultNewUser.tel_id,
+			introduce: resultNewUser.introduce
 		}
 		
 		// 更新登录信息

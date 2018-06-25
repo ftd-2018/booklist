@@ -12,7 +12,8 @@ class UserService extends Service {
         master_school: result.master_school,
         wechat_id: result.wechat_id,
         tel_id: result.tel_id,
-        credit: result.credit
+        credit: result.credit,
+        introduce: result.introduce
       };
     }else{
       obj = null;

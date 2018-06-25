@@ -16,6 +16,7 @@
   color: #24253D ;
   font-size: 34rpx;
   margin-bottom: 10rpx;
+  padding-top: 10rpx;
 }
 
 .userinfo__des{

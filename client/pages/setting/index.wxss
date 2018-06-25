@@ -35,3 +35,8 @@
   background-color:#D73316;
   border-radius: 8rpx;
 }
+
+.search-placeholder{
+  font-size: 30rpx;
+  color: rgba(36, 37, 61, .3);
+}

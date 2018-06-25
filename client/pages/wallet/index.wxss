@@ -63,3 +63,9 @@
   background-color: white;
 }
 
+.bottomTips{
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
+}

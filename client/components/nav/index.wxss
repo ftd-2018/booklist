@@ -74,7 +74,7 @@
   box-shadow: 0 4px 8px 0 rgba(221,221,221,0.50);
   z-index: 99999;
 }
-.ftd-nav__panel::after{
+/* .ftd-nav__panel::after{
   content: '';
   position: absolute;
   transform: rotate(45deg) translate(6px, 6px);
@@ -87,7 +87,7 @@
   border-top: 1px solid #F0F0F0;
   border-left: 1px solid #F0F0F0;
   z-index: -1;
-}
+} */
 .ftd-nav__content{
   display: flex;
   align-items:center;

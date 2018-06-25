@@ -11,12 +11,12 @@
   border-bottom: 1px solid #e5e5e5;
 }
 
-.ftd-wallet_left{
+.ftd-walletall_left{
   display: flex;
   flex-direction: column;
 }
 
-.ftd-wallet_title{
+.ftd-walletall_title{
   font-size: 32rpx;
   color: #333333;
 }
@@ -41,4 +41,11 @@
 .ftd-wallet_time{
   font-size: 24rpx;
   color: #999999;
+}
+
+.bottomTips{
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
 }

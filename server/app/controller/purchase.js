@@ -22,7 +22,9 @@ class PurchaseController extends Base {
 
 	async listMyPurchaseAboutMe(){
 		const {ctx, app} = this;
-		const result = await ctx.service.purchase.selectPurchaseAboutMe();
+		const page = ctx.request.body.page;
+		const size = ctx.request.body.size;
+		const result = await ctx.service.purchase.selectPurchaseAboutMe(page, size);
 		const userInfo = await ctx.service.user.find({
 			id: app.userId
 		});

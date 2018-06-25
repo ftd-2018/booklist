@@ -34,9 +34,9 @@ class PurchaseService extends Service {
 		return result;
 	}
 
-	async selectPurchaseAboutMe(){
+	async selectPurchaseAboutMe(page, size){
 		const {app, ctx} = this;
-		const result = await app.mysql.query('select c.price,p.user_id,p.add_time from purchase as p left join course as c on c.id=p.course_id where p.course_id IN (select course_id from purchase where course_id IN (select id from course where user_id='+app.userId+')) OR p.user_id='+app.userId+' ORDER BY p.add_time;');
+		const result = await app.mysql.query('select c.price,p.user_id,p.add_time from purchase as p left join course as c on c.id=p.course_id where p.course_id IN (select course_id from purchase where course_id IN (select id from course where user_id='+app.userId+')) OR p.user_id='+app.userId+' ORDER BY p.add_time LIMIT '+(page-1)*size+','+size);
 		
 		// 修改result字段，user_id 属性去除，user_id 为自身则是购买类型 0，不是自身则被订购类型 1
 		if(result.length > 0){

@@ -12,6 +12,9 @@
   color:#333333;
   background-color:#FFFFFF;
 }
+.search-placeholder{
+    color: rgba(36, 37, 61, .3);
+}
 .course-inp .label{
   float:left;
   width:390rpx;
