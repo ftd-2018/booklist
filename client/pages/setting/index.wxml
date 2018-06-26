@@ -11,18 +11,18 @@
         bindinput="myAvatar"/></view>
     </view> -->
     <view class="setting-inp">
-        <text class="label">本科院校</text>
-        <view class="inp-text"><input name="title" placeholder="请输入本科院校" 
+        <text class="label">本科院校及专业</text>
+        <view class="inp-text"><input name="title" placeholder="例：清华 · 计算机专业" 
         bindinput="collegesInp" value='{{collegesInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <view class="setting-inp">
-        <text class="label">研究生院校（选填）</text>
+        <text class="label">研究生院校及专业（选填）</text>
         <view class="inp-text"><input name="title" placeholder="请输入研究生院校" 
         bindinput="graduateInp" value='{{graduateInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <view class="setting-inp">
-        <text class="label">个人简介</text>
-        <view class="inp-text"><input name="title" placeholder="请输入个人简介" 
+        <text class="label">职业经历</text>
+        <view class="inp-text"><input name="title" placeholder="例：微软-软件工程师" 
         bindinput="introInp" value='{{introInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <view class="setting-inp">
