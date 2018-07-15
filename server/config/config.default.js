@@ -29,7 +29,7 @@ module.exports = appInfo => {
       // 用户名
       user: 'root',
       // 密码
-      password: 'booklist123456',
+      password: 'hbjhebb123',
       // 数据库名
       database: 'booklist',
     },

@@ -73,7 +73,7 @@ class CourseService extends Service {
 		const collect = await ctx.service.collect.listMyCollect();
 		let allCourse = await app.mysql.select('course',{
 			where:{publish: 1},
-			columns: ['id', 'title'],
+			columns: ['id', 'title', 'user_id'],
 			limit: size,
 			offset: (page - 1)*size
 		});
@@ -86,6 +86,9 @@ class CourseService extends Service {
 					allCourse[i].isCollect = 1;  // 已收藏
 				}
 			}
+			let result = await ctx.service.user.find({id:allCourse[i].user_id});
+			allCourse[i].headImg = result.avatar;
+			allCourse[i].undergraduate = result.username+"/"+result.undergraduate;
 		}
 		return allCourse;
 	}
@@ -93,7 +96,7 @@ class CourseService extends Service {
 	async selectCourseWithTitle(title, page, size){
 		const {ctx, app} = this;
 		const collect = await ctx.service.collect.listMyCollect();
-		let allCourse = await app.mysql.query('select id,title from course where title like "%'+title+'%" AND publish=1 LIMIT '+(page-1)*size+','+size);
+		let allCourse = await app.mysql.query('select id,title,user_id from course where title like "%'+title+'%" AND publish=1 LIMIT '+(page-1)*size+','+size);
 		for(let i = 0; i < allCourse.length; i++){
 			allCourse[i].isCollect = 0;   // 未收藏
 			let length = await ctx.service.purchase.getPayCount(allCourse[i].id);
@@ -103,6 +106,9 @@ class CourseService extends Service {
 					allCourse[i].isCollect = 1;  // 已收藏
 				}
 			}
+			let result = await ctx.service.user.find({id:allCourse[i].user_id});
+			allCourse[i].headImg = result.avatar;
+			allCourse[i].undergraduate = result.username+"/"+result.undergraduate;
 		}
 		return allCourse;
 	}

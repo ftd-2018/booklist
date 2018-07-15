@@ -11,12 +11,6 @@
   padding-left: 30rpx;
   margin-bottom: 36rpx;
 }
-.booklist{
-  display: flex;
-  justify-content: space-between; 
-  width: 670rpx;
-  flex-wrap: wrap;
-}
 .bottomTips{
   font-size: 28rpx;
   text-align: center;

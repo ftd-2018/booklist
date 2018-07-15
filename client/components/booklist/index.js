@@ -21,6 +21,14 @@ Component({
     payCount:{
       type: String,
       value: "0"
+    },
+    headImg:{
+      type: String,
+      value: "/images/head.png"
+    },
+    master:{
+      type: String,
+      value: "123"
     }
   },
   /**

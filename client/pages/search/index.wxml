@@ -11,6 +11,8 @@
       title="{{item.title}}"
       isCollect="{{item.isCollect}}"
       courseID="{{item.id}}"
+      headImg="{{item.headImg}}"
+      master="{{item.undergraduate}}"
       payCount="{{item.payCount}}"
     ></ftdBL>
   </view>

@@ -12,17 +12,17 @@
     </view> -->
     <view class="setting-inp">
         <text class="label">本科院校及专业</text>
-        <view class="inp-text"><input name="title" placeholder="例：清华 · 计算机专业" 
+        <view class="inp-text"><input name="title" placeholder="例：清华大学·数学专业" 
         bindinput="collegesInp" value='{{collegesInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <view class="setting-inp">
         <text class="label">研究生院校及专业（选填）</text>
-        <view class="inp-text"><input name="title" placeholder="请输入研究生院校" 
+        <view class="inp-text"><input name="title" placeholder="例：斯坦福·金融专业" 
         bindinput="graduateInp" value='{{graduateInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <view class="setting-inp">
         <text class="label">职业经历</text>
-        <view class="inp-text"><input name="title" placeholder="例：微软-软件工程师" 
+        <view class="inp-text"><input name="title" placeholder="例：微软·web前端" 
         bindinput="introInp" value='{{introInp}}' placeholder-class="search-placeholder"/></view>
     </view>
     <view class="setting-inp">

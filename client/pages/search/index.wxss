@@ -23,10 +23,10 @@
   border-radius: 16rpx;
 }
 .booklist{
-  display: flex;
+  /* display: flex;
   justify-content: space-between; 
   width: 670rpx;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 .search__placeholder{
   font-size: 30rpx;

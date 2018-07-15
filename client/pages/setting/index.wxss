@@ -1,10 +1,10 @@
 .my-setting{
   display: flex;
   flex-direction: column;
-   padding: 118rpx 0 0 0; 
+  padding: 118rpx 0 0 0; 
 }
 .setting-inp{
-  width:750rpx;
+  width:684rpx;
   height: 100rpx;
   padding:0 32rpx;
   font-size:28rpx;
@@ -20,6 +20,7 @@
   float:right;
   /* width:190rpx; */
   height: 100rpx;
+  text-align: right;
 }
 .inp-text input{
   height: 100rpx;  

@@ -3,6 +3,8 @@
   <view>
     <navigator hover-class="none" url="/pages/details/index?courseID={{courseID}}&title={{title}}">{{title}}</navigator>
   </view>
+  <image class="ftd-booklist__head" src="{{headImg}}"></image>
+  <view class="ftd-booklist__master">{{master}}</view>
   <view class="payCount">{{payCount}}人已购</view>
-  <image src="{{collectBackImage}}" bindtap="collectBookList"></image>
+  <image class="ftd-booklist__collectBackImage" src="{{collectBackImage}}" bindtap="collectBookList"></image>
 </view>

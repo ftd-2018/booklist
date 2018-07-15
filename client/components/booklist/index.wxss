@@ -3,33 +3,50 @@
   position: relative;
   background: #F5F5F5;
   border-radius: 16rpx;
-  width: 294rpx;
-  height: 128rpx;
+  width: 690rpx;
+  height: 144rpx;
   font-size: 28rpx;
   color: #24253D;
-  padding-left: 30rpx;
+  margin:0 auto;
   margin-bottom: 20rpx;
 }
 .ftd-booklist navigator{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 244rpx;
-  height: 80rpx;
+  width: 614rpx;
+  height: 120rpx;
+  padding-left: 30rpx;
   padding-top: 20rpx;
+  font-size: 28rpx;
+  color: #24253D;
 }
-.ftd-booklist image{
+.ftd-booklist__collectBackImage{
   position: absolute;
-  width: 30rpx;
-  height: 27rpx;
-  top: 81rpx;
-  right: 26rpx;
+  width: 37rpx;
+  height: 34rpx;
+  top: 18rpx;
+  right: 30rpx;
 }
-
+.ftd-booklist .ftd-booklist__head{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  top: 74rpx;
+  left: 30rpx;
+}
+.ftd-booklist__master{
+  position: absolute;
+  left: 98rpx;
+  top: 83rpx;
+  font-size: 24rpx;
+  color: rgba(36,37,61,0.50);
+}
 .payCount{
     position: absolute;
     color: #949494;
     font-size: 22rpx;
-    left: 30rpx;
-    top: 78rpx;
+    right: 30rpx;
+    bottom: 28rpx;
 }
