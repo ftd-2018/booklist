@@ -17,8 +17,8 @@ module.exports = appInfo => {
   };
   
   config.wx = {
-    secret: '4f421381c90f78c9337aff9b37800868',
-    appid: 'wx538b02d5b8c48759'
+    secret: 'b5bbbd338db3e84a7946fef6e810a5fc',
+    appid: 'wx05813457e9f93574'
   }
   
   config.mysql = {

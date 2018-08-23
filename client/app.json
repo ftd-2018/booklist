@@ -16,7 +16,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "分享书单",
+        "navigationBarTitleText": "书单分享",
         "navigationBarTextStyle": "black"
     }
 }
