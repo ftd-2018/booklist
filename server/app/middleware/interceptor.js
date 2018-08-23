@@ -1,6 +1,7 @@
 module.exports = options => {
   return async function interceptor(ctx, next) {
     if(ctx.path == '/' || ctx.path == '/auth/loginByWeixinAction'){
+
         await next();
         return;
     }

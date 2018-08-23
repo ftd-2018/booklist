@@ -8,7 +8,6 @@ class AuthController extends Base {
 		this.token =new this.ctx.helper.Token(this.ctx);
 	}
 	async loginByWeixinAction() {
-		console.log(123123);
 		let token = new this.ctx.helper.Token(this.ctx);
 		const ctx = this.ctx;
 		const code = ctx.request.body.code;
@@ -30,13 +29,13 @@ class AuthController extends Base {
 
 		const sessionData = await ctx.curl('https://api.weixin.qq.com/sns/jscode2session',options);
 		if (!sessionData.data.openid) {
-		  return this.fail('登录失败1');
+		  return this.fail('登录失败');
 		}
 		// 验证用户信息完整性（数字签名验证）
 		const crypto = require('crypto');
 		const sha1 = crypto.createHash('sha1').update(fullUserInfo.rawData + sessionData.data.session_key).digest('hex');
 		if (fullUserInfo.signature !== sha1) {
-		  return this.fail('登录失败2');
+		  return this.fail('登录失败');
 		}
 		//根据openid查找用户是否已经注册
 		let userMsg = await ctx.service.user.find({openid: sessionData.data.openid});
