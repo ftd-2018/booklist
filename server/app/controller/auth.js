@@ -1,6 +1,7 @@
 const Base = require('./base');
 const Util = require('../../utils/util');
 const util = new Util();
+const log4js = require('log4js');
 
 class AuthController extends Base {
 	constructor(props) {
@@ -28,14 +29,14 @@ class AuthController extends Base {
 		};
 		const sessionData = await ctx.curl('https://api.weixin.qq.com/sns/jscode2session',options);
 		if (!sessionData.data.openid) {
-		  console.log(11111,sessionData);
+		  logger.debug('1Got cheese.');
 		  return this.fail('登录失败');
 		}
 		// 验证用户信息完整性（数字签名验证）
 		const crypto = require('crypto');
 		const sha1 = crypto.createHash('sha1').update(fullUserInfo.rawData + sessionData.data.session_key).digest('hex');
 		if (fullUserInfo.signature !== sha1) {
-		  console.log(2222,sessionData);
+		  logger.debug('2Got cheese.');
 		  return this.fail('登录失败');
 		}
 		//根据openid查找用户是否已经注册
