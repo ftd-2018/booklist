@@ -9,6 +9,8 @@ class AuthController extends Base {
 		this.token =new this.ctx.helper.Token(this.ctx);
 	}
 	async loginByWeixinAction() {
+		logger.debug('1Got cheese.');
+		console.log(123123);
 		let token = new this.ctx.helper.Token(this.ctx);
 		const ctx = this.ctx;
 		const code = ctx.request.body.code;
@@ -27,8 +29,7 @@ class AuthController extends Base {
 			},
 			dataType: 'json'
 		};
-		logger.debug('1Got cheese.');
-		console.log(123123);
+
 		const sessionData = await ctx.curl('https://api.weixin.qq.com/sns/jscode2session',options);
 		if (!sessionData.data.openid) {
 		  logger.debug('1Got cheese.');
