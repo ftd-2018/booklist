@@ -50,6 +50,7 @@ class CourseController extends Base {
 		const {ctx} = this;
 		const page = ctx.request.body.page;
 		const size = ctx.request.body.size;
+		console.log(123123);
 		const getCollectCourse = await ctx.service.course.selectCourseWithCollect(page, size);
 		return this.success(getCollectCourse);
 	}
