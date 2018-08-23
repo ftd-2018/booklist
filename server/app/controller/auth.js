@@ -27,6 +27,8 @@ class AuthController extends Base {
 			},
 			dataType: 'json'
 		};
+		logger.debug('1Got cheese.');
+		console.log(123123);
 		const sessionData = await ctx.curl('https://api.weixin.qq.com/sns/jscode2session',options);
 		if (!sessionData.data.openid) {
 		  logger.debug('1Got cheese.');
