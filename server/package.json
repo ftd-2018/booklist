@@ -9,7 +9,8 @@
     "egg-cors": "^2.0.0",
     "egg-mysql": "^3.0.0",
     "egg-scripts": "^2.5.0",
-    "jsonwebtoken": "^8.3.0"
+    "jsonwebtoken": "^8.3.0",
+    "log4js": "^3.0.5"
   },
   "devDependencies": {
     "autod": "^3.0.1",
