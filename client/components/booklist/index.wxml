@@ -5,6 +5,6 @@
   </view>
   <image class="ftd-booklist__head" src="{{headImg}}"></image>
   <view class="ftd-booklist__master">{{master}}</view>
-  <view class="payCount">{{payCount}}人已购</view>
+  <!-- <view class="payCount">{{payCount}}人已购</view> -->
   <image class="ftd-booklist__collectBackImage" src="{{collectBackImage}}" bindtap="collectBookList"></image>
 </view>
