@@ -29,19 +29,23 @@ Component({
       url: "/pages/myblist/index",
       text: "我的书单",
       imgUrl: "/images/2.png"
-    },{
-      url: "/pages/purchase/index",
-      text: "我的订阅",
-      imgUrl: "/images/3.png"
-    }, {
-        url: "/pages/wallet/index",
-        text: "我的钱包",
-        imgUrl: "/images/4.png"
-    },{
+    },
+    // {
+    //   url: "/pages/purchase/index",
+    //   text: "我的订阅",
+    //   imgUrl: "/images/3.png"
+    // },
+    // {
+    //     url: "/pages/wallet/index",
+    //     text: "我的钱包",
+    //     imgUrl: "/images/4.png"
+    // },
+    {
       url: "/pages/setting/index",
       text: "我的设置",
       imgUrl: "/images/5.png"
-    }],
+    }
+    ],
     isShowNav: false
   },
   ready:function(){
