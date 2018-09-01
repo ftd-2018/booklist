@@ -17,8 +17,8 @@ module.exports = appInfo => {
   };
   
   config.wx = {
-    secret: 'b5bbbd338db3e84a7946fef6e810a5fc',
-    appid: 'wx05813457e9f93574'
+    secret: '',
+    appid: ''
   }
   
   config.mysql = {
@@ -29,9 +29,9 @@ module.exports = appInfo => {
       // 用户名
       user: 'root',
       // 密码
-      password: 'hbjhebb123',
+      password: '',
       // 数据库名
-      database: 'booklist',
+      database: '',
     },
     // 所有数据库配置的默认值
     default:{},
